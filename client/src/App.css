@@ -22,3 +22,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.btn{
+  border-radius:25px;
+  border: 0px
+}
+
+.section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  border-radius:25px;
+}
+

@@ -1,14 +1,23 @@
 import axios from "axios";
 
 const API= {
-    facebook: function(){
-      return axios.get("/auth/facebook/")
-    },
-    twitter: function(){
-        return axios.get("/auth/twitter/")
-      },
-    facebookLogin: function(){
-        return axios.get("/auth/facebook/callback")
+
+    getUser: (uid)=>{
+     return axios({
+        method: 'get',
+        url: 'http://localhost:8080/argumentuser/'+uid,
+        data: {
+          id: uid,
+        }
+      });
+      }
+    ,
+    getChats: (uid)=>{
+      return axios.get("http://localhost:8080/chats/all/"+uid,{
+        body:{
+          id:uid
+        }
+      })
     }
   };
 

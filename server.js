@@ -1,42 +1,16 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes/api/");
 const socket = require('socket.io');
 const passport = require('passport');
-const session = require('express-session');
+const passportSetup = require('./auth')
+const session = require('express-session')
 const bodyParser = require('body-parser')
+const cookieSession= require('cookie-session')
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-//set up the sessions
-app.use(session({
-  secret: 's3cr3t',
-  resave: true,
-  saveUninitialized: true
-}));
-//making sure sessions work with passport 
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(routes);
-
-// serialize and deserialize
-passport.serializeUser(function(user, done) {
-  console.log('serializeUser: ' + user._id);
-  done(null, user._id);
-});
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user){
-    console.log(user);
-      if(!err) done(null, user);
-      else done(err, null);
-    });
-});
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -45,23 +19,35 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes API 
+
+
+
+// set up session cookies
+app.use(cookieSession({
+  name:'arguchat',
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+  keys: [process.env.COOKIE_KEY]
+}));
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Add  API routes
 app.use(routes);
 
-//stting up passport serialization
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
-passport.deserializeUser(function(userId, done) {
-  User.findById(userId, (err, user) => done(err, user));
-});
+//connecting to mongodb
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/users");
 
 server=app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactheadlines");
 
 //naming socket, havine it use the server
 io = socket(server);
@@ -70,8 +56,5 @@ io = socket(server);
 io.on('connection', (socket) => {
     console.log(socket.id);
 
-    //sending and recieving messages on socket
-    socket.on('SEND_MESSAGE', function(data){
-        io.emit('RECEIVE_MESSAGE', data);
-    })
 });
+

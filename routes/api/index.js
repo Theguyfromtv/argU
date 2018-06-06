@@ -1,8 +1,10 @@
-var router = require("express").Router();
-var authRoutes = require("./auth");
-//var headlineRoutes = require("./headlines");
+const router = require("express").Router();
+const authRoutes = require("./auth");
+const userRoutes = require("./user");
+const chatRoutes = require('./chats')
 
 router.use("/auth", authRoutes);
-//router.use("/headlines", headlineRoutes);
+router.use('/chats',chatRoutes)
+router.use("/", userRoutes);
 
 module.exports = router;

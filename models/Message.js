@@ -6,24 +6,35 @@ var mongoose = require("mongoose");
 // Create the schema class using mongoose's schema method
 var Schema = mongoose.Schema;
 
-// Create the noteSchema with the schema object
-var noteSchema = new Schema({
-  // The headline is the article associate with the note
-  _headlineId: {
-    type: Schema.Types.ObjectId,
-    ref: "Headline"
+// Create the messageSchema with the schema object
+var messageSchema = new Schema({
+  // each message has a chat it's in
+  chat: {
+    type: String,
+    required: true
   },
-  // date is just a string
-  date: {
+  // then we have the sender who sent it
+  sender: {
     type: Date,
     default: Date.now
   },
-  // as is the noteText
-  noteText: String
+  // then we have the format of the message
+  format: {
+    type:String,
+    required: true
+  },
+  //ans a boolean to know if it's a link or not
+  isLink:{
+    type:Boolean,
+    required: true
+  }
+},
+{
+  timestamps: true
 });
 
-// Create the Note model using the noteSchema
-var Note = mongoose.model("Note", noteSchema);
+// Create the Message model using the messageSchema
+var Note = mongoose.model("Message", messageSchema);
 
-// Export the Note model
-module.exports = Note;
+// Export the Message model
+module.exports = Message;

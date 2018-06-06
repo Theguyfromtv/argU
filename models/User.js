@@ -3,7 +3,7 @@
 
 // Require mongoose
 const mongoose = require("mongoose");
-const findOrCreate = require('mongoose-find-or-create')
+const findOrCreate = require('mongoose-findorcreate')
 
 
 // Create a schema class using mongoose's schema method
@@ -23,7 +23,9 @@ const UserSchema = new Schema({
   name: {
     type:  String,
     required: true
-  }
+  },
+  chats:[],
+  topics:[],
 },
 {
   timestamps: true
@@ -33,4 +35,6 @@ const UserSchema = new Schema({
 UserSchema.plugin(findOrCreate)
 
 //export it all
-module.exports = mongoose.model('User', UserSchema);
+let User = mongoose.model('User', UserSchema);
+
+module.exports=User
