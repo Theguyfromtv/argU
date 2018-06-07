@@ -27,7 +27,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_CONSUMERKEY,
     consumerSecret: process.env.TWITTER_CONSUMERSECRET,
-    callbackURL: "https://afternoon-sea-74630.herokuapp.com//twitter/callback",
+    callbackURL: "https://argu-chat.herokuapp.com/auth/twitter/callback",
 	includeEmail:true
   }, 
   function(accessToken, refreshToken, profile, done) {
@@ -44,7 +44,7 @@ passport.use(new TwitterStrategy({
 passport.use(new FacebookStrategy({
     clientID : process.env.FACEBOOK_APP_ID,
     clientSecret : process.env.FACEBOOK_SECRET,
-    callbackURL: "https://afternoon-sea-74630.herokuapp.com/facebook/callback",
+    callbackURL: "https://argu-chat.herokuapp.com/auth/facebook/callback",
     profileFields:['id','displayName','emails']
 },
 function(accessToken, refreshToken, profile, done) {
