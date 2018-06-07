@@ -4,7 +4,7 @@ import Argument from '../Argument/Argument'
 let ArgumentList =props => {
 
   return (
-     <div className="col sm-4">
+     <div className="col-sm-4">
       <div className="top-bar">
         <h6>{props.user.name}'s Arguments</h6>
       </div>

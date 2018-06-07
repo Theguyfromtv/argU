@@ -5,19 +5,25 @@ const API= {
     getUser: (uid)=>{
      return axios({
         method: 'get',
-        url: 'http://localhost:8080/argumentuser/'+uid,
-        data: {
-          id: uid,
-        }
+        url: 'https://afternoon-sea-74630.herokuapp.com/ '+uid,
       });
       }
     ,
     getChats: (uid)=>{
-      return axios.get("http://localhost:8080/chats/all/"+uid,{
-        body:{
-          id:uid
-        }
+      return axios.get("https://afternoon-sea-74630.herokuapp.com/ "+uid,{
       })
+    },
+    getMessages: (cid)=>{
+
+    },
+    sendMessage: (cid, message, type, sender)=>{
+        axios.post('https://afternoon-sea-74630.herokuapp.com/ ',{
+          id:cid,
+          message:message,
+          type:type,
+          sender:sender
+        })
+
     }
   };
 

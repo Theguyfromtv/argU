@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 8080;
-const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes/api/");
 const socket = require('socket.io');
@@ -10,7 +9,12 @@ const passportSetup = require('./auth')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const cookieSession= require('cookie-session')
+const cors = require('cors')
 
+
+const app = express();
+
+app.use(cors());
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,7 +58,11 @@ io = socket(server);
 
 //creating socket connetction
 io.on('connection', (socket) => {
-    console.log(socket.id);
+    console.log("socket id is:"+ socket.id);
 
 });
 
+ io.origins(["http://localhost:3000/"])
+
+
+module.exports=io

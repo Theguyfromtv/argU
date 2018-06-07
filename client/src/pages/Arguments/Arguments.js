@@ -11,16 +11,16 @@ class Arguments extends Component {
         user:{},
         chats:[],
         isHidden:true,
-        currentChat:"5b17aa542cbd735c64b8d5e8"
+        currentChat:""
     }
   loadUser=()=>{
     let userArr=window.location.href.split('=')
     let userId=userArr[1]
-    let userFinalId=userId.split('#')
+    let userFinalId=userId.split('&')
     userId=userFinalId[0]
     API.getUser(userId).then((res)=>{
         this.setState({user:res.data})
-        console.log(this.state.user)
+        //console.log(this.state.user)
     })
     
 
@@ -28,13 +28,24 @@ class Arguments extends Component {
   loadChats=()=>{
     let userArr=window.location.href.split('=')
     let userId=userArr[1]
-    let userFinalId=userId.split('#')
+    let userFinalId=userId.split("&")
     userId=userFinalId[0]
       API.getChats(userId).then((res)=>{
           console.log(res)
           this.setState({chats:[...res.data]})
           console.log(this.state.chats)
       })
+  }
+  loadCurrentChat=()=>{
+      let currentChatArr=window.location.href.split('&')
+      if(currentChatArr[1]){      
+        currentChatArr=currentChatArr[1]
+        let newCurrentChat=currentChatArr.split('=')
+        newCurrentChat=newCurrentChat[1]
+        this.setState({currentChat:newCurrentChat})
+        console.log(newCurrentChat)
+    }
+
   }
   toggleHidden(){
     this.setState({isHidden: !this.state.isHidden})
@@ -43,6 +54,7 @@ class Arguments extends Component {
   componentDidMount(){
     this.loadUser()
     this.loadChats()
+    this.loadCurrentChat()
     
   }
 
@@ -50,35 +62,35 @@ class Arguments extends Component {
 
   render() {
     return (
-      <div>
-           <div className="row">
+      <div className="container-fluid">
            <MediaQuery query="(min-width: 769px)">
-
+           <div className="row">
                 <ArgumentList
                 chats={this.state.chats}
                 user={this.state.user}
                 />
+                
 
-                <div className="col sm-8">
                     <Chat
                     chats={this.state.chats}
-                    current={this.state.currentChat}/>
+                    current={this.state.currentChat}
+                    user={this.state.user}/>
                 </div>
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
-                <button className="btn btn-lg btn-primary" onClick={this.toggleHidden.bind(this)}>Sidebar</button>
+            <div className="row">
+            <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleHidden.bind(this)}>Sidebar</button>
                 {!this.state.isHidden && <ArgumentList 
                 chats={this.state.chats}
                 user={this.state.user}
                 />}
-                <div className="col sm-8">
-                    <Chat
-                    chat={this.state.currentChat}/>
-                </div>
+                {this.state.isHidden && <Chat
+                chat={this.state.currentChat}/>}
+            </div>
+                
             </MediaQuery>
           </div>
 
-      </div>
     );
   }
 }

@@ -38,7 +38,7 @@ userController.updateTopics=(req,res)=>{
           //creating the chat. sending the first message letting them know they matched and then adding the new chat to the user's files on the db, then sending back a response with the updated user object
           Chat.create({participant1:user1._id, participant2:user2._id,isActive:true}).exec((err,chat)=>{
             if (err) throw err
-            let initMessage ={sender:system,message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!"}
+            let initMessage ={sender:system,message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!", type:system}
             Chat.findOneAndUpdate({_id:chat_id},{$push:{messages:initMessage}})
             let chatId=chat._id
 

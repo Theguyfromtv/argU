@@ -1,0 +1,69 @@
+#chatView{
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    overflow-y: scroll;
+    position: relative;
+
+}
+#chatView::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+.row{
+    height: 100%;
+}
+
+.overflow{
+   height: 100vh 
+}
+
+.input{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.form-control{
+    border-radius:50px 0px 0px 50px;
+    width: 100%;
+    display: flex;
+}
+
+textarea{
+    width: 90%;
+    z-index: -1;
+    resize: none
+
+}
+
+.submit{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 50px 50px 0px;
+
+}
+
+.bottom1{
+    margin-right:0;
+    padding-right: 0;
+}
+
+.bottom2{
+    margin-left:0;
+    padding-left: 0;
+}
+
+input { overflow: visible; }
+
+
+
+@media only screen and (max-width: 768px) {
+    
+    .bottom1{
+        max-width: 80%;
+    }
+    .bottom2{
+        max-width: 20%;
+    }
+}

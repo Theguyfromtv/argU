@@ -7,8 +7,8 @@ import './Login.css'
   render() {
     return (
       <div>
-        <a  href="http://localhost:8080/auth/facebook" className="btn btn-lg btn-block btn-primary facebook">Login with Facebook</a>
-        <a  href="http://localhost:8080/auth/twitter" className="btn btn-lg btn-block btn-primary twitter">Login with Twitter</a>
+        <a  href="https://afternoon-sea-74630.herokuapp.com/ " className="btn btn-lg btn-block btn-primary facebook">Login with Facebook</a>
+        <a  href="https://afternoon-sea-74630.herokuapp.com/ " className="btn btn-lg btn-block btn-primary twitter">Login with Twitter</a>
       </div>
     )
   }

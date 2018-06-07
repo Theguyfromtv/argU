@@ -1,5 +1,7 @@
 const User=require('../models/User')
 const Chat=require('../models/Conversation')
+const io=require('../server')
+
 
 const chatController={}
 
@@ -12,6 +14,17 @@ chatController.getMessages= (req,res)=>{
         let allChats= [...chats,...moreChats]
         res.json(allChats)
     })
+  })
+}
+
+chatController.sendMessage=(req,res)=>{
+  console.log(req)
+  let message = {sender:req.body.sender,message:req.body.message,type:req.body.type}
+  Chat.findOneAndUpdate({_id:req.body.id},{$push:{messages:message}}).exec((err,chat)=>{
+    if (err) throw err
+    else{
+      io.emit('message', chat);
+    }
   })
 }
 
