@@ -9,12 +9,10 @@ const passportSetup = require('./auth')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const cookieSession= require('cookie-session')
-const cors = require('cors')
 
 
 const app = express();
 
-app.use(cors());
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
