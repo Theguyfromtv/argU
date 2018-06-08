@@ -10,7 +10,7 @@ const API= {
       }
     ,
     getChats: (uid)=>{
-      return axios.get("/chats/"+uid,{
+      return axios.get("/chats/all/"+uid,{
       })
     },
     getMessages: (cid)=>{
