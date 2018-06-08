@@ -62,7 +62,5 @@ io.on('connection', (socket) => {
 
 });
 
- io.origins(["http://localhost:3000/"])
-
 
 module.exports=io
