@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 8080;
 const mongoose = require("mongoose");
 const routes = require("./routes/api/");
 const socket = require('socket.io');
+const passportSetup = require('./auth')
 const passport = require('passport');
 const session = require('express-session')
 const bodyParser = require('body-parser')
