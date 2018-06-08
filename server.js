@@ -30,7 +30,7 @@ app.use(routes);
 
 
 app.get('*', function (request, response){
-  res.render(path.join(__dirname, "/client/build/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
 })
 
 // set up session cookies
@@ -40,12 +40,7 @@ app.use(cookieSession({
   keys: [process.env.COOKIE_KEY]
 }));
 
-// initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
 
-// Add  API routes
-app.use(routes);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
