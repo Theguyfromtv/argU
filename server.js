@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+  response.sendFile(path.resolve(__dirname,'index.html'))
 })
 
 // set up session cookies
