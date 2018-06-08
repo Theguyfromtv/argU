@@ -5,7 +5,7 @@ const API= {
     getUser: (uid)=>{
      return axios({
         method: 'get',
-        url: '/api/'+uid,
+        url: '/api/login/'+uid,
       });
       }
     ,
