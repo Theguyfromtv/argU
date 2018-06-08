@@ -22,9 +22,9 @@ app.use(bodyParser.json());
   app.use(express.static("client/build"));
 }*/
 
-/*app.get('*', function (request, response){
-  response.sendFile('index.html')
-})*/
+app.get('*', function (request, response){
+  response.sendFile('/client/build/index.html')
+})
 
 // set up session cookies
 app.use(cookieSession({
