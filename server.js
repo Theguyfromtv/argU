@@ -24,13 +24,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Add  API routes
-//app.use(routes);
+app.use(routes);
 
 
 
 
 app.get('*', function (request, response){
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+  res.render(path.join(__dirname, "/client/build/index.html"));
 })
 
 // set up session cookies
