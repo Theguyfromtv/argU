@@ -15,7 +15,7 @@ facebook : function() {
 //Facebook login response
 facebookResponse : function(){ 
   passport.authenticate('facebook', 
-    {successRedirect: '/arguments', failureRedirect: '/login' }),(req,res)=>{
+    {successRedirect: '/user/arguments', failureRedirect: '/login' }),(req,res)=>{
 }
 },
 
@@ -27,7 +27,7 @@ twitter : function() {
 //Twiitter login response
 twitterResponse : function(req,res){
   passport.authenticate('twitter', 
-  {successRedirect: '/arguments', failureRedirect: '/login' }),(req,res)=>{
+  {successRedirect: '/user/arguments', failureRedirect: '/login' }),(req,res)=>{
 }
 }
 

@@ -7,8 +7,8 @@ import './Login.css'
   render() {
     return (
       <div>
-        <a  href="/api/auth/facebook " className="btn btn-lg btn-block btn-primary facebook">Login with Facebook</a>
-        <a  href="/api/auth/twitter " className="btn btn-lg btn-block btn-primary twitter">Login with Twitter</a>
+        <a  href="/auth/facebook " className="btn btn-lg btn-block btn-primary facebook">Login with Facebook</a>
+        <a  href="/auth/twitter " className="btn btn-lg btn-block btn-primary twitter">Login with Twitter</a>
       </div>
     )
   }
