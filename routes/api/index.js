@@ -5,6 +5,6 @@ const chatRoutes = require('./chats')
 
 router.use("/auth", authRoutes);
 router.use('/chats',chatRoutes)
-router.use("/", userRoutes);
+router.use("/login", userRoutes);
 
 module.exports = router;

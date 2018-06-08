@@ -5,19 +5,19 @@ const API= {
     getUser: (uid)=>{
      return axios({
         method: 'get',
-        url: '/api/login/'+uid,
+        url: '/login/'+uid,
       });
       }
     ,
     getChats: (uid)=>{
-      return axios.get("/api/chats/"+uid,{
+      return axios.get("/chats/"+uid,{
       })
     },
     getMessages: (cid)=>{
 
     },
     sendMessage: (cid, message, type, sender)=>{
-        axios.post('/api/chats/ ',{
+        axios.post('/chats/ ',{
           id:cid,
           message:message,
           type:type,
