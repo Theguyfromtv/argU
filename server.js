@@ -29,7 +29,7 @@ app.use(passport.session());
 
 //make the server serve up react's index file and use react router
 app.get('*', function (req, res){
-  console.log(req.Url)
+  console.log(req)
   if (req.Url.path.startsWith('/api')){
     app.use(routes);
   }else{
