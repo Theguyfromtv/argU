@@ -5,12 +5,12 @@ const API= {
     getUser: (uid)=>{
      return axios({
         method: 'get',
-        url: '/ '+uid,
+        url: '/'+uid,
       });
       }
     ,
     getChats: (uid)=>{
-      return axios.get("/chats/ "+uid,{
+      return axios.get("/chats/"+uid,{
       })
     },
     getMessages: (cid)=>{
