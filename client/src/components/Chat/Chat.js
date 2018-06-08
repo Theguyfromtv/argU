@@ -25,7 +25,7 @@ class Chat extends Component {
   
    componentDidMount=()=>{
      console.log()
-    this.socket = io.connect('https://afternoon-sea-74630.herokuapp.com/' )
+    this.socket = io()
 
     this.socket.on('message', (chat)=>{
       if(chat._id===this.state.currentChat){
