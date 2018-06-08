@@ -23,15 +23,13 @@ if (process.env.NODE_ENV === "production") {
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Add  API routes
-app.use(routes);
 
-
-
-
-app.get('*', function (req, res){
+app.get('/user', function (req, res){
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
 })
+
+// Add  API routes
+app.use(routes);
 
 // set up session cookies
 app.use(cookieSession({
