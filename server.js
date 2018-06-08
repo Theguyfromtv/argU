@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const routes = require("./routes/api/");
 const socket = require('socket.io');
 const passport = require('passport');
-const passportSetup = require('./auth')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const cookieSession= require('cookie-session')
@@ -29,7 +28,7 @@ app.use(passport.session());
 
 //make the server serve up react's index file and use react router
 app.get('*', function (req, res){
-  console.log(req._parsedOriginalUrl.Url)
+  console.log(req.route)
   if (req.Url.path.startsWith('/api')){
     app.use(routes);
   }else{
