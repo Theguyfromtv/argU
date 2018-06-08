@@ -30,7 +30,7 @@ app.use(passport.session());
 
 
 app.get('*', function (request, response){
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
 })
 
 // set up session cookies
