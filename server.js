@@ -26,8 +26,6 @@ app.use(passport.session());
 // Add  API routes
 app.use(routes);
 
-
-
 //make the server serve up react's index file and use react router
 app.get('/user', function (req, res){
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
