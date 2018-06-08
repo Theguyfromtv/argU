@@ -22,9 +22,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.get('*', function (request, response){
+/*app.get('*', function (request, response){
   response.sendFile('index.html')
-})
+})*/
 
 // set up session cookies
 app.use(cookieSession({
