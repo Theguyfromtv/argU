@@ -11,10 +11,10 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Switch>
+          <div>
             <Route exact path='/' component={LoginPage}/>
             <Route path='~/arguments/' component={Arguments}/>
-          </Switch>
+          </div>
         </Router>
       </div>
     );
