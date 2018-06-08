@@ -13,17 +13,24 @@ const cookieSession= require('cookie-session')
 
 const app = express();
 
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Add  API routes
+app.use(routes);
+
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
-/*if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-}*/
+}
 
 app.get('*', function (request, response){
-  response.sendFile('/client/build/index.html')
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 })
 
 // set up session cookies
