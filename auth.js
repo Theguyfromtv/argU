@@ -25,8 +25,8 @@ passport.deserializeUser(function(id, done) {
 
 //defining the strategy, making sure to ask for email.
 passport.use(new TwitterStrategy({
-    consumerKey: .env.TWITTER_CONSUMERKEY,
-    consumerSecret: .env.TWITTER_CONSUMERSECRET,
+    consumerKey: process.env.TWITTER_CONSUMERKEY,
+    consumerSecret: process.env.TWITTER_CONSUMERSECRET,
     callbackURL: "https://argu-chat.herokuapp.com/auth/twitter/callback",
 	includeEmail:true
   }, 
@@ -42,8 +42,8 @@ passport.use(new TwitterStrategy({
 
 //defining the strategy, making sure to ask for email.
 passport.use(new FacebookStrategy({
-    clientID : .env.FACEBOOK_APP_ID,
-    clientSecret : .env.FACEBOOK_SECRET,
+    clientID : process.env.FACEBOOK_APP_ID,
+    clientSecret : process.env.FACEBOOK_SECRET,
     callbackURL: "https://argu-chat.herokuapp.com/auth/facebook/callback",
     profileFields:['id','displayName','emails']
 },
