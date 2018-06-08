@@ -24,7 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Add  API routes
-app.use(routes);
+//app.use(routes);
 
 
 
