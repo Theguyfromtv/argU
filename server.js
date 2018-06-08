@@ -20,7 +20,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // initialize passport
-app.use(session())
+let secret=process.env.COOKIE_KEY
+app.use(session({secret}))
 app.use(passport.initialize());
 app.use(passport.session());
 
