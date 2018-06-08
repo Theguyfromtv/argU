@@ -44,7 +44,7 @@ passport.use(new TwitterStrategy({
 passport.use(new FacebookStrategy({
     clientID : process.env.FACEBOOK_APP_ID,
     clientSecret : process.env.FACEBOOK_SECRET,
-    callbackURL: "https://argu-chat.herokuapp.com/api/auth/facebook/callback",
+    callbackURL: "https://argu-chat.herokuapp.com/auth/facebook/callback",
     profileFields:['id','displayName','emails']
 },
 function(accessToken, refreshToken, profile, done) {
