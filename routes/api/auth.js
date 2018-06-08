@@ -11,7 +11,7 @@ router.get("/facebook", passport.authenticate('facebook', {scope:["email"]}, { d
 //route facebook redirects to, the function also takes in the user and assignes it to the var above
 router.get("/facebook/callback", passport.authenticate('facebook', 
 {failureRedirect: '/' }),(req,res)=>{
-    res.redirect('/#/arguments?id='+req.user._id)
+    res.redirect('/arguments?id='+req.user._id)
 })
 
 //same thing for twitter
@@ -19,7 +19,7 @@ router.get("/twitter",passport.authenticate('twitter', {scope:'include_email=tru
 
 router.get("/twitter/callback", passport.authenticate('twitter', 
 {failureRedirect: '/' }),(req,res)=>{
-    res.redirect('/#/arguments?id='+req.user._id)
+    res.redirect('/arguments?id='+req.user._id)
 })
 
 
