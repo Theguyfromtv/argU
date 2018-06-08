@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // initialize passport
-app.use(express.session())
+app.use(session())
 app.use(passport.initialize());
 app.use(passport.session());
 
