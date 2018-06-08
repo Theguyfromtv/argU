@@ -27,7 +27,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_CONSUMERKEY,
     consumerSecret: process.env.TWITTER_CONSUMERSECRET,
-    callbackURL: "https://argu-chat.herokuapp.com/api/auth/twitter/callback",
+    callbackURL: "https://argu-chat.herokuapp.com/auth/twitter/callback",
 	includeEmail:true
   }, 
   function(accessToken, refreshToken, profile, done) {
