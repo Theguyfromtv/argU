@@ -9,9 +9,15 @@ const passportSetup = require('./auth')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const cookieSession= require('cookie-session')
-
-
 const app = express();
+
+// Define middleware here
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // initialize passport
 app.use(passport.initialize());
@@ -21,13 +27,7 @@ app.use(passport.session());
 app.use(routes);
 
 
-// Define middleware here
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+
 
 app.get('*', function (request, response){
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
