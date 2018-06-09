@@ -17,14 +17,16 @@ class ArgumentList extends Component {
       this.setState({topics:newTopics})
     })
   }
-  toggleUnread=(id)=>{
-    if(this.props.unread){
-      this.props.unread=false
-    }
+  test=()=>{
+      console.log(this.props.user)
   }
-  toggleTopics(){
+  
+  toggleTopics=()=>{
     this.setState({isHidden: !this.state.isHidden})
   
+  }
+  componentDidMount(){
+    this.test()
   }
   render(){
     return (
@@ -36,7 +38,6 @@ class ArgumentList extends Component {
        </div>
        <div className="sidebar">
          {this.props.chats.map(chat=>
- 
          <Argument 
          key={chat._id}
          id={chat._id}
