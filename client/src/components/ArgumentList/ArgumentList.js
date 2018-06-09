@@ -37,7 +37,7 @@ class ArgumentList extends Component {
          {!this.state.isHidden && <Topics topics={this.state.topics}/>}
        </div>
        <div className="sidebar">
-         {this.props.chats.map(chat=>
+         {this.props.chats? this.props.chats.map(chat=>
          <Argument 
          key={chat._id}
          id={chat._id}
@@ -50,7 +50,7 @@ class ArgumentList extends Component {
          unread={this.state.unread.includes(chat._id)}
          markRead={this.toggleUnread}
          />
-         )}
+         ): <Argument/>}
  
          
          
