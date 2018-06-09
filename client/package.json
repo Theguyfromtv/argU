@@ -10,6 +10,7 @@
     "react-responsive": "^4.1.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
+    "react-switch": "^3.0.2",
     "socket.io": "^2.1.1"
   },
   "scripts": {

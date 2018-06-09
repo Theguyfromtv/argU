@@ -10,20 +10,22 @@ const API= {
       }
     ,
     getChats: (uid)=>{
-      return axios.get("/chats/all/"+uid,{
-      })
+      return axios.get("/chats/all/"+uid)
     },
     getMessages: (cid)=>{
 
     },
     sendMessage: (cid, message, type, sender)=>{
-        axios.post('/chats/ ',{
+        return axios.post('/chats/ ',{
           id:cid,
           message:message,
           type:type,
           sender:sender
         })
 
+    },
+    getTopics:()=>{
+      return axios.get('/login/topics')
     }
   };
 

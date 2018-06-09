@@ -3,6 +3,7 @@ import MediaQuery from 'react-responsive';
 import ArgumentList from '../../components/ArgumentList/ArgumentList'
 import API from "../../utils/API"
 import Chat from "../../components/Chat/Chat"
+import io from 'socket.io-client'
 
 
 class Arguments extends Component {
@@ -11,7 +12,9 @@ class Arguments extends Component {
         user:{},
         chats:[],
         isHidden:true,
-        currentChat:""
+        currentChat:"",
+        unread:[],
+        stage:""
     }
   loadUser=()=>{
     let userArr=window.location.href.split('=')
@@ -26,15 +29,8 @@ class Arguments extends Component {
 
   }
   loadChats=()=>{
-    let userArr=window.location.href.split('=')
-    let userId=userArr[1]
-    let userFinalId=userId.split("&")
-    userId=userFinalId[0]
-      API.getChats(userId).then((res)=>{
-          console.log(res)
-          this.setState({chats:[...res.data]})
-          console.log(this.state.chats)
-      })
+    let newChats=this.state.user.chats
+    this.setState({chats:newChats})
   }
   loadCurrentChat=()=>{
       let currentChatArr=window.location.href.split('&')
@@ -56,8 +52,26 @@ class Arguments extends Component {
     this.loadChats()
     this.loadCurrentChat()
     
-  }
+    this.socket = io()
 
+    this.socket.on('match', user=>{
+        if(user._id===this.state.user._id){
+            const newChats=user.chats
+            this.setState({chats:newChats})
+        }
+    })
+
+    this.socket.on('message' ,chat=>{
+        if(chat._id===this.state.currentChat){
+
+        }else{
+            this.setState({unread:[...chat._id]})
+        }
+    })
+}
+    
+    
+    
 
 
   render() {
@@ -68,6 +82,7 @@ class Arguments extends Component {
                 <ArgumentList
                 chats={this.state.chats}
                 user={this.state.user}
+                unread={this.state.unread}
                 />
                 
 
