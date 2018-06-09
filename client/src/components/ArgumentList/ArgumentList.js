@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Argument from '../Argument/Argument'
 import Topics from '../Topics/Topics'
+import API from '../../utils/API'
 
 
 class ArgumentList extends Component {
@@ -8,7 +9,13 @@ class ArgumentList extends Component {
 
   state={
       isHidden:false,
-      unread: this.props.unread
+      unread: this.props.unread,
+      topics:[]
+  }
+  getTopics=()=>{
+    API.getTopics().then((newTopics)=>{
+      this.setState({topics:newTopics})
+    })
   }
   toggleUnread=(id)=>{
     if(this.props.unread){
@@ -25,7 +32,7 @@ class ArgumentList extends Component {
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
          <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleTopics.bind(this)}>Topics</button>
-         {!this.state.isHidden && <Topics/>}
+         {!this.state.isHidden && <Topics topics={this.state.topics}/>}
        </div>
        <div className="sidebar">
          {this.props.chats.map(chat=>
