@@ -20,7 +20,7 @@ class ArgumentList extends Component {
       <div className="col-sm-4">
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
-         <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleHidden.bind(this)}>Topics</button>
+         <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.state.isHidden.bind(this)}>Topics</button>
          {!this.state.isHidden && <Topics/>}
        </div>
        <div className="sidebar">
