@@ -14,6 +14,6 @@ const topicSchema = new Schema({
   });
     
   //export it all
-  let Topic = mongoose.model('Topic', UserSchema);
+  let Topic = mongoose.model('Topic', topicSchema);
   
   module.exports=Topic
