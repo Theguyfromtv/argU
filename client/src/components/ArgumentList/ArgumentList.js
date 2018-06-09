@@ -17,8 +17,8 @@ class ArgumentList extends Component {
       this.setState({topics:newTopics})
     })
   }
-  test=(props)=>{
-      console.log(props.user)
+  test=()=>{
+      console.log(this.props)
   }
   
   toggleTopics=()=>{
