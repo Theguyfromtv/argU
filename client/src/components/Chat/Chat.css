@@ -31,11 +31,13 @@
     display: flex;
     padding:  0px 0px 0px 50px;
     max-height: 100px;
-    overflow: scroll;
 }
 
-#chatView::-webkit-scrollbar { 
-    width: 0 !important 
+textarea{
+    width: 90%;
+    z-index: -1;
+    resize: none
+
 }
 
 .submit{
