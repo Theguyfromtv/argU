@@ -51,6 +51,31 @@ class Chat extends Component {
     <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+          test <br/>
+
             {this.state.messages.map((message,index)=>{
         
               <Message key={index}
