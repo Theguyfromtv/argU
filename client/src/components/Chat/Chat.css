@@ -19,6 +19,10 @@
    height: 100vh 
 }
 
+.actions{
+    height: 50px;
+}
+
 .input{
     position: absolute;
     bottom: 0;
