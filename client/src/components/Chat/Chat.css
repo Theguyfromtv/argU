@@ -4,6 +4,7 @@
     display: flex;
     overflow-y: scroll;
     position: relative;
+    border-radius:0px 0px 0px 0px;
 
 }
 #chatView::-webkit-scrollbar { 
@@ -28,6 +29,7 @@
     border-radius:75px 0px 0px 0px;
     width: 100%;
     display: flex;
+    padding: 40px;
 }
 
 textarea{

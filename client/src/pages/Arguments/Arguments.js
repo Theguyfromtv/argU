@@ -14,7 +14,6 @@ class Arguments extends Component {
         isHidden:true,
         currentChat:"",
         unread:[],
-        stage:""
     }
   loadUser=()=>{
     let userArr=window.location.href.split('=')
