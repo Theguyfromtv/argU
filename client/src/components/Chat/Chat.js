@@ -49,7 +49,6 @@ class Chat extends Component {
   render() {
     return (
     <div className="col-sm-8">
-      <div className="overflow">
         <div className="row">
           <div id="chatView">
             {this.state.messages.map((message,index)=>{
@@ -73,7 +72,6 @@ class Chat extends Component {
           </div>
 
         </div>
-      </div>
       </div>
     )
   }
