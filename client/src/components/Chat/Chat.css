@@ -31,13 +31,11 @@
     display: flex;
     padding:  0px 0px 0px 50px;
     max-height: 100px;
+    overflow: scroll;
 }
 
-textarea{
-    width: 90%;
-    z-index: -1;
-    resize: none
-
+.form-control::-webkit-scrollbar { 
+    width: 0 !important 
 }
 
 .submit{
