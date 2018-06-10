@@ -53,6 +53,37 @@ class Chat extends Component {
           <div id="chatView">
 
             <div className="messageView">
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+            Test <br/>
+
             {this.state.messages.map((message,index)=>{
         
               <Message key={index}
