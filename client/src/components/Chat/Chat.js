@@ -57,8 +57,8 @@ class Chat extends Component {
               <Message key={index}
               message={message}/>
             })}
-            <Drawer stage={this.state.currentStage}/>
             <div className=" input">
+            <Drawer stage={this.state.currentStage}/>
               <div className="row ">
                 <div className="col-sm-10 bottom1">
                   <span contenteditable="true" class="text-box form-control"placeholder={this.state.currentStage}></span>

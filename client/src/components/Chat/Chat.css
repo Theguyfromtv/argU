@@ -23,6 +23,8 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    background-color: aquamarine;
+    border-radius:75px 0px 0px 75px;
 }
 
 .form-control{
