@@ -48,7 +48,7 @@ class Chat extends Component {
 
   render() {
     return (
-    <div className="col-sm-8">
+    <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
             {this.state.messages.map((message,index)=>{
