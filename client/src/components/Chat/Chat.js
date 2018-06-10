@@ -61,7 +61,7 @@ class Chat extends Component {
             <div className=" input">
               <div className="row ">
                 <div className="col-sm-10 bottom1">
-                 <input type="text" className="form-control" id="inlineFormInputName" placeholder={this.state.currentStage}/> 
+                  <span contenteditable="true" class="text-box form-control"placeholder={this.state.currentStage}></span>
                 </div>
                   <div className="col-sm-2 bottom2">
                   <button type="submit" className="submit btn btn-primary" onClick={this.sendMessage}><i className="zmdi zmdi-mail-send"></i></button>  
