@@ -22,11 +22,6 @@ var messageSchema = new Schema({
   format: {
     type:String,
     required: true
-  },
-  //ans a boolean to know if it's a link or not
-  isLink:{
-    type:Boolean,
-    required: true
   }
 },
 {
