@@ -30,6 +30,7 @@
     width: 100%;
     display: flex;
     padding:  0px 0px 0px 50px;
+    max-height: 100px;
 }
 
 textarea{
