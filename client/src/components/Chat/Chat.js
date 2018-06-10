@@ -51,9 +51,8 @@ class Chat extends Component {
     <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
-          <div className="row">
-          <div className="messageView">
-            Test <br/>
+
+            <div className="messageView">
             Test <br/>
             Test <br/>
             Test <br/>
@@ -90,9 +89,7 @@ class Chat extends Component {
                 message={message}/>
                 })}
             </div>
-          </div>
-          <div className="row">
-          <div className=" input">
+            <div className=" input">
               <div className="actions">
                 <Drawer stage={this.state.currentStage}/>
               </div>
@@ -106,8 +103,6 @@ class Chat extends Component {
               </div>
           </div>
           </div>
-          </div>
-
 
         </div>
       </div>
