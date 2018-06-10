@@ -34,7 +34,7 @@
     overflow: scroll;
 }
 
-.form-control::-webkit-scrollbar { 
+#chatView::-webkit-scrollbar { 
     width: 0 !important 
 }
 
