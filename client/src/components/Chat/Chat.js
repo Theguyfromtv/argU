@@ -51,36 +51,14 @@ class Chat extends Component {
     <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
-          test <br/>
 
+            <div className="messageView">
             {this.state.messages.map((message,index)=>{
         
               <Message key={index}
-              message={message}/>
-            })}
+                message={message}/>
+                })}
+            </div>
             <div className=" input">
               <div className="actions">
                 <Drawer stage={this.state.currentStage}/>

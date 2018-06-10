@@ -7,6 +7,14 @@
     height: 100vh
 
 }
+.messageView{
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    overflow-y: scroll;
+    border-radius:0px 0px 0px 0px;
+}
+
 #chatView::-webkit-scrollbar { 
     width: 0 !important 
 }
