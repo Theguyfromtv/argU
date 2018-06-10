@@ -37,6 +37,8 @@
     height: 50px;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: absolute;
+    bottom: 0;
 }
 
 textarea{
@@ -44,12 +46,15 @@ textarea{
     z-index: -1;
     resize: none
 
+
 }
 
 .submit{
     width: 100%;
-    height: 100%;
+    height: 50px;
     border-radius: 0px 75px 0px 0px;
+    position: absolute;
+    bottom: 0;
 
 }
 
@@ -63,7 +68,6 @@ textarea{
     padding-left: 0;
 }
 
-input { overflow: expand; }
 
 
 
