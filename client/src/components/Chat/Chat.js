@@ -51,7 +51,7 @@ class Chat extends Component {
     <div className="col-sm-8">
       <div className="overflow">
         <div className="row">
-          <div className="card" id="chatView">
+          <div id="chatView">
             {this.state.messages.map((message,index)=>{
         
               <Message key={index}
