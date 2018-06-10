@@ -57,7 +57,7 @@ class Chat extends Component {
               <Message key={index}
               message={message}/>
             })}
-            <Drawer  className="drawer" stage={this.state.currentStage}>
+            <Drawer stage={this.state.currentStage}/>
             <div className=" input">
               <div className="row ">
                 <div className="col-sm-10 bottom1">
@@ -68,11 +68,10 @@ class Chat extends Component {
                   </div>
               </div>
           </div>
-          </Drawer>
-          </div>
           </div>
 
         </div>
+      </div>
       </div>
     )
   }
