@@ -35,6 +35,13 @@ var chatSchema = new Schema({
   topic:{
     type:String,
     required:true
+  },
+  stage:{
+    type:String,
+    required:true
+  },
+  read:{
+    type:Boolean
   }
   
 });
