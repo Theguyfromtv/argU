@@ -18,6 +18,8 @@ userController.login=function(req, res) {
 
 //controller to update the user's topics, and looks for matches with other users who have opposite opinions on the same topic
 userController.updateTopics=(req,res)=>{
+  const participant1
+  const participant2
   //naming the new topic and pushing it into the user on the db
   console.log(req.body)
   let newTopic=req.body.name
@@ -29,11 +31,11 @@ userController.updateTopics=(req,res)=>{
     //find one who disagrees on the same topic and create a promise that creates a new chat on the db
     User.findOne({topics:{$elemMatch:{topic:newTopic,side:!newSide}}}).exec((err,user2)=>{
       if(newSide){
-        const participant1=user1;
-        const participant2=user2;
+         participant1=user1;
+         participant2=user2;
       }else if(!newSide){
-        const participant2=user1;
-        const participant1=user2;
+         participant2=user1;
+         participant1=user2;
       }
           /*let coinflip= Math.floor(Math.random() * 2);
           let turn
