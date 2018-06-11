@@ -51,7 +51,7 @@ import API from '../../utils/API'
  render(){
   return (
     <div>
-      <h4>Your current opinions</h4>
+      <h4>Give us your opinions</h4>
  
       <div className="card">
         <label htmlFor={this.props.topics[0].name}>
@@ -62,7 +62,7 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>Save</button>
+      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>argu!</button>
 
       </label>
       </div>
@@ -75,7 +75,7 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>Save</button>
+      <button className="btn btn-lg btn-primary btn-sidebar" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>argu!</button>
 
       </label>
       </div>
@@ -88,7 +88,7 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>Save</button>
+      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>argu!</button>
 
       </label>
       </div>
