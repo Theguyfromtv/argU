@@ -64,6 +64,12 @@ class Arguments extends Component {
             this.setState({unread:[...chat._id]})
         }
     })
+    this.socket = io()
+
+    this.socket.on("match", (chat)=>{
+        this.setState({chats:[...chat]})
+    })
+
 }
     
     
