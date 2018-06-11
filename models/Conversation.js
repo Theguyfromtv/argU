@@ -3,6 +3,8 @@
 
 // Require mongoose
 var mongoose = require("mongoose");
+const findOrCreate = require('mongoose-findorcreate')
+
 // Create the schema class using mongoose's schema method
 var Schema = mongoose.Schema;
 
@@ -45,8 +47,11 @@ var chatSchema = new Schema({
   
 });
 
+chatSchema.plugin(findOrCreate)
+
 // Create the Chat model using the chatSchema
 var Chat = mongoose.model("Chat", chatSchema);
+
 
 // Export the Chat model
 module.exports = Chat;
