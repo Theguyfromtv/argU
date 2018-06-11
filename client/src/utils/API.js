@@ -28,14 +28,10 @@ const API= {
       return axios.get('/login/alltopics')
     },
     updateTopics:(topic,side,id)=>{
-      axios({
-        method:'post',
-        url:'/login/topics',
-        body:{
-          id:id,
-          topic: topic,
-          side:side
-        }
+      return axios.post('/login/topics',{
+        id:id,
+        topic: topic,
+        side:side
       })
     }
   };
