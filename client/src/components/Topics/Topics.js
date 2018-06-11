@@ -17,6 +17,7 @@ import Switch from "react-switch";
     let userFinalId=userId.split('&')
     userId=userFinalId[0]
     this.setState({userid:userId})
+    console.log(userId)
   }
   
   handleChange1=()=>{
@@ -32,7 +33,7 @@ import Switch from "react-switch";
     
   }
   componentDidMount(){
-  console.log("topic mounted")
+    this.getUser()
   }
   
  render(){
