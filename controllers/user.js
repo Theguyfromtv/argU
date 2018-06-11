@@ -21,16 +21,16 @@ userController.updateTopics=(req,res)=>{
   let participant1
   let participant2
   //naming the new topic and pushing it into the user on the db
+  console.log(req.body)
   let newTopic=req.body.topic
+  console.log(newTopic)
   let newSide=req.body.side
  let topic={topic:newTopic,side:newSide}
- User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}}).exec((err,user1)=>{
-   if (err){
-     console.log(err)
-   }
+ User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}},function(err,user1){
+   if (err) throw err
    else{
     //find one who disagrees on the same topic and create a promise that creates a new chat on the db
-    User.findOne({topics:{$elemMatch:{topic:newTopic,side:!newSide}}}).exec((err,user2)=>{
+    User.findOne({topics:{$elemMatch:{topic:newTopic,side:!newSide}}},function(err,user2){
       if(newSide){
          participant1=user1;
          participant2=user2;
@@ -57,13 +57,12 @@ userController.updateTopics=(req,res)=>{
               if (err) throw err
               User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}},function(err,user){
                 if (err) throw err            
-                res.send(user1.name+" and "+user2.name+" are now arguing")
+                res.send(user1.name+" and "+user2.name+"are now arguing")
               })
             })
 
           })
       }else{
-        console.log(user1)
         res.send("no matches")
       }
 
@@ -76,7 +75,13 @@ userController.updateTopics=(req,res)=>{
 
 })}
 
+userController.getTopics=(req,res)=>{
+  User.findOne({_id:req.params.id}, function(err,user){
+    if (err) throw err
+    res.json(user)
+  })
 
+}
 
 
 module.exports = userController;
