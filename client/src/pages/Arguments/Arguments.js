@@ -23,8 +23,9 @@ class Arguments extends Component {
     API.getUser(userId).then((res)=>{
         this.setState({user:res.data})
         console.log(this.state.user)
-        this.setState({chats:res.data.chats})
-        console.log(this.state.chats)
+        API.getChats(this.state.user._id).then(res=>{
+            this.setState({chats:res.chats})
+        })
 
     })
     
@@ -53,13 +54,6 @@ class Arguments extends Component {
     this.loadCurrentChat()
     
     this.socket = io()
-
-    this.socket.on('match', user=>{
-        if(user._id===this.state.user._id){
-            const newChats=user.chats
-            this.setState({chats:newChats})
-        }
-    })
 
     this.socket.on('message' ,chat=>{
         if(chat._id===this.state.currentChat){

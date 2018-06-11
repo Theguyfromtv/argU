@@ -12,7 +12,7 @@ chatController.getMessages= (req,res)=>{
     if (err) throw err
     Chat.find({participant2id:req.params.id}).exec((err,moreChats)=>{
         let allChats= [...chats,...moreChats]
-        res.json(allChats)
+        res.json({chats:allChats})
     })
   })
 }

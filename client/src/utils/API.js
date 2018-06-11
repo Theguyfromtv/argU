@@ -12,9 +12,6 @@ const API= {
     getChats: (uid)=>{
       return axios.get("/chats/all/"+uid)
     },
-    getMessages: (cid)=>{
-
-    },
     sendMessage: (cid, message, type, sender)=>{
         return axios.post('/chats/ ',{
           id:cid,
