@@ -52,7 +52,7 @@ userController.updateTopics=(req,res)=>{
             let initMessage ={sender:"system",message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!"}
             Chat.findOneAndUpdate({_id:chat._id},{$push:{messages:initMessage}})
             let chatId=chat._id
-            const socket = io();
+            const socket = io("https://argu-chat.herokuapp.com/");
 
             socket.emit('match', chat)
               
