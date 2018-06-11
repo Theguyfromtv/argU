@@ -29,7 +29,16 @@ import API from '../../utils/API'
     this.setState({ topic3Val:!this.state.topic3Val })
   }
   sendChange=(topic,side,id)=>{
-    API.updateTopics(topic,side,id).then(res=>{console.log(res)})
+    API.updateTopics(topic,side,id).then(res=>{
+      if(res.data._id){
+        window.location.replace("/user/arguments?uid="+this.state.user._id+"&cid="+res.data._id)
+      }
+      else{
+
+      }
+    })
+
+   
   }
   getOpinions=()=>{
     for (let i =0 ; i<this.state.user.topics; i++){

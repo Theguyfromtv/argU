@@ -65,7 +65,7 @@ userController.updateTopics=(req,res)=>{
                if (err) throw err
                User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}},function(err,user){
                  if (err) throw err            
-                 res.send(user1.name+" and "+user2.name+"are now arguing")
+                 res.json(chat)
                })
              })
  
