@@ -27,7 +27,7 @@ class ArgumentList extends Component {
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
          <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleTopics.bind(this)}>Topics</button>
-         {this.state.isHidden && <Topics topics={[{name:"Trump",id:"1"}, {name:"Abortion",id:"2"},{name:"Star Wars: The Last Jedi", id:"3"} ]}/>}
+         {this.state.isHidden && <Topics topics={[{name:"Trump",id:"1"}, {name:"Abortion",id:"2"},{name:"Star Wars: The Last Jedi", id:"3"}]}/>}
        </div>
        <div className="sidebar">
          {this.props.chats? this.props.chats.map(chat=>
@@ -43,7 +43,7 @@ class ArgumentList extends Component {
          unread={this.state.unread.includes(chat._id)}
          markRead={this.toggleUnread}
          />
-         ): <Argument/>}
+         ): <h4>You have no arguments yet, tell us your opinions and find some!</h4>}
  
          
          

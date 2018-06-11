@@ -24,9 +24,6 @@ const API= {
         })
 
     },
-    getTopics:()=>{
-      return axios.get('/login/alltopics')
-    },
     updateTopics:(topic,side,id)=>{
       return axios.post('/login/topics',{
         id:id,

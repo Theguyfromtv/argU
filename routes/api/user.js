@@ -6,7 +6,6 @@ router.get('/:id', userController.login)
 
 router.post('/topics',userController.updateTopics)
 
-router.get('/alltopics', userController.getTopics)
 
 
 

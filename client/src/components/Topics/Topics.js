@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Topic from '../../components/Topic/Topic'
 import Switch from "react-switch";
 import API from '../../utils/API'
 
