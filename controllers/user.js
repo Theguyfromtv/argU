@@ -56,10 +56,12 @@ userController.updateTopics=(req,res)=>{
             User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}}).then((err,user)=>{
               if (err) throw err
               io.emit('match',user)
+              console.log(chatId)             
             })
             User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}}).then((err,user)=>{
               if (err) throw err
-              io.emit('match',user)              
+              io.emit('match',user) 
+              console.log(chatId)             
             })
           })
           res.send("match!")
