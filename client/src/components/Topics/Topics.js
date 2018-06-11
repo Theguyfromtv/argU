@@ -31,9 +31,22 @@ import API from '../../utils/API'
   sendChange=(topic,side,id)=>{
     API.updateTopics(topic,side,id).then(res=>{console.log(res)})
   }
+  getOpinions=()=>{
+    for (let i =0 ; i<this.state.user.topics; i++){
+      if(this.state.user.topics[i]===this.props.topics[0]){
+        this.setState({topic1Val:this.state.user.topics[i].side})
+      }else if(this.state.user.topics[i]===this.props.topics[1]){
+        this.setState({topic2Val:this.state.user.topics[i].side})
+    }else if(this.state.user.topics[i]===this.props.topics[2]){
+      this.setState({topic3Val:this.state.user.topics[i].side})
+      }
+    }
+  }
   componentDidMount(){
     this.getUser()
+    this.getOpinions()
   }
+
   
  render(){
   return (
