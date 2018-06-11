@@ -30,6 +30,9 @@ import API from '../../utils/API'
     }
     
   }
+  getTopics=(id)=>{
+
+  }
   
   handleChange1=()=>{
     this.setState({ topic1Val:!this.state.topic1Val })

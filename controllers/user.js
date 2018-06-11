@@ -50,7 +50,7 @@ userController.updateTopics=(req,res)=>{
           Chat.create({participant1id:participant1._id, participant1name:participant1.name,participant1read:false, participant2id:participant2._id, participant2name:participant2.name,participant2read:false,isActive:true,topic:newTopic, messages:[]},function(err,chat){
             if (err) throw err
             let initMessage ={sender:"system",message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!"}
-            Chat.findOneAndUpdate({_id:chat_id},{$push:{messages:initMessage}})
+            Chat.findOneAndUpdate({_id:chat._id},{$push:{messages:initMessage}})
             let chatId=chat._id
               
             User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}}).then((err,user)=>{
@@ -79,12 +79,11 @@ userController.updateTopics=(req,res)=>{
 })}
 
 userController.getTopics=(req,res)=>{
-  console.log(req)
-  Topic.find({}).exec(err,result=>{
+  User.findOne({_id:req.params.id}, function(err,user){
     if (err) throw err
-    console.log(result);
-    res.send({result})
+    res.json(user)
   })
+
 }
 
 
