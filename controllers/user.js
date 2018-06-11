@@ -21,13 +21,13 @@ userController.updateTopics=(req,res)=>{
   let participant1
   let participant2
   //naming the new topic and pushing it into the user on the db
-  console.log(req.body)
   let newTopic=req.body.topic
-  console.log(newTopic)
   let newSide=req.body.side
  let topic={topic:newTopic,side:newSide}
  User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}}).exec((err,user1)=>{
-   if (err) throw err
+   if (err){
+     console.log(err)
+   }
    else{
     //find one who disagrees on the same topic and create a promise that creates a new chat on the db
     User.findOne({topics:{$elemMatch:{topic:newTopic,side:!newSide}}}).exec((err,user2)=>{
