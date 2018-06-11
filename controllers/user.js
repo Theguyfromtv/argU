@@ -29,11 +29,11 @@ userController.updateTopics=(req,res)=>{
     //find one who disagrees on the same topic and create a promise that creates a new chat on the db
     User.findOne({topics:{$elemMatch:{topic:newTopic,side:!newSide}}}).exec((err,user2)=>{
       if(newSide){
-        user1=participant1;
-        user2=participant2;
+        const participant1=user1;
+        const participant2=user2;
       }else if(!newSide){
-        user1=participant2;
-        user2=participant2;
+        const participant2=user1;
+        const participant1=user2;
       }
           /*let coinflip= Math.floor(Math.random() * 2);
           let turn
