@@ -12,9 +12,13 @@ import Switch from "react-switch";
 
   }
   getUser=()=>{
+    if (window.location.hash == "#_=_")
+    {
+    window.location.hash = "";
+    }
     let userArr=window.location.href.split('=')
     let userId=userArr[1]
-    let userFinalId=userId.split('&')
+    let userFinalId=userId.split('')
     userId=userFinalId[0]
     this.setState({userid:userId})
     console.log(userId)
