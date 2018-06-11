@@ -26,7 +26,7 @@ class Arguments extends Component {
         API.getChats(this.state.user._id).then(res=>{
             this.setState({chats:res.data.chats})
             console.log(res)
-            console.log(this.state.data.chats)
+            console.log(this.state.chats)
         })
 
     })
