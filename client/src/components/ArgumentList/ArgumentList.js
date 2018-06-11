@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Argument from '../Argument/Argument'
 import Topics from '../Topics/Topics'
 import API from '../../utils/API'
+import "./ArgumentList.css"
 
 
 class ArgumentList extends Component {
@@ -23,7 +24,7 @@ class ArgumentList extends Component {
   }
   render(){
     return (
-      <div className="col-sm-4">
+      <div className="col-sm-4 sidebar">
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
          <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleTopics.bind(this)}>Topics</button>
