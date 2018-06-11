@@ -12,6 +12,9 @@ export default class Topic extends Component {
     sendChange=(topicVal)=>{
 
     }
+    componentDidMount(){
+      console.log("topic mounted")
+    }
   render() {
     return (
       <div className="card">
