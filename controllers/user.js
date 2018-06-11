@@ -68,6 +68,7 @@ userController.updateTopics=(req,res)=>{
 
 userController.getTopics=(req,res)=>{
   Topic.find({}).exec(result=>{
+    console.log(result);
     res.json({topics:result})
   })
 }
