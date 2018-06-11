@@ -5,10 +5,19 @@ import Switch from "react-switch";
 
  class Topics extends Component{
   state={
-    topicVal:true
+    topic1Val:true,
+    topic2Val:true,
+    topic3Val:true
+
   }
-  handleChange=()=>{
-    this.setState({ topicVal:!this.state.topicVal })
+  handleChange1=()=>{
+    this.setState({ topic1Val:!this.state.topic1Val })
+  }
+  handleChange2=()=>{
+    this.setState({ topic2Val:!this.state.topic2Val })
+  }
+  handleChange3=()=>{
+    this.setState({ topic3Val:!this.state.topic3Val })
   }
   sendChange=(topicVal)=>{
   
@@ -26,12 +35,10 @@ import Switch from "react-switch";
         <label htmlFor={this.props.topics[0].name}>
         <span>{this.props.topics[0].name}</span>
         <Switch
-          onChange={this.handleChange}
-          checked={this.state.topicVal}
+          onChange={this.handleChange1}
+          checked={this.state.topic1Val}
           offColor="#eb3c24"
           onColor="#3385f7"
-          uncheckedIcon={<i className="fas fa-minus-circle"></i>}
-          checkedIcon={<i className="fas fa-plus-circle"></i>}
         />
       <button className="btn btn-lg btn-primary btn-sidebar">Save</button>
 
@@ -41,12 +48,10 @@ import Switch from "react-switch";
         <label htmlFor={this.props.topics[1].name}>
         <span>{this.props.topics[1].name}</span>
         <Switch
-          onChange={this.handleChange}
-          checked={this.state.topicVal}
+          onChange={this.handleChange2}
+          checked={this.state.topic2Val}
           offColor="#eb3c24"
           onColor="#3385f7"
-          uncheckedIcon={<i className="fas fa-minus-circle"></i>}
-          checkedIcon={<i className="fas fa-plus-circle"></i>}
         />
       <button className="btn btn-lg btn-primary btn-sidebar">Save</button>
 
@@ -56,12 +61,10 @@ import Switch from "react-switch";
         <label htmlFor={this.props.topics[2].name}>
         <span>{this.props.topics[2].name}</span>
         <Switch
-          onChange={this.handleChange}
-          checked={this.state.topicVal}
+          onChange={this.handleChange3}
+          checked={this.state.topic3Val}
           offColor="#eb3c24"
           onColor="#3385f7"
-          uncheckedIcon={<i className="fas fa-minus-circle"></i>}
-          checkedIcon={<i className="fas fa-plus-circle"></i>}
         />
       <button className="btn btn-lg btn-primary btn-sidebar">Save</button>
 
