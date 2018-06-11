@@ -65,6 +65,9 @@ io.on('connection', (socket) => {
 
 });
 
+io.on('match', (chat)=>{
+  io.emit('match', chat)
+})
 
 process.on('unhandledRejection', (reason, p) => {
   console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);

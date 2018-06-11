@@ -20,6 +20,8 @@ userController.login=function(req, res) {
 userController.updateTopics=(req,res)=>{
   let participant1
   let participant2
+  const socket = io("https://argu-chat.herokuapp.com/");
+
   //naming the new topic and pushing it into the user on the db
   console.log(req.body)
   let newTopic=req.body.topic
@@ -56,7 +58,6 @@ userController.updateTopics=(req,res)=>{
              let initMessage ={sender:"system",message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!"}
              Chat.findOneAndUpdate({_id:chat._id},{$push:{messages:initMessage}})
              let chatId=chat._id
-             const socket = io("https://argu-chat.herokuapp.com/");
  
              socket.emit('match', chat)
                
