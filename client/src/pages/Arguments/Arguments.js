@@ -13,7 +13,7 @@ class Arguments extends Component {
         chats:[],
         isHidden:true,
         currentChat:"",
-        unread:[],
+        
     }
   loadUser=()=>{
     let userArr=window.location.href.split('=')
@@ -58,11 +58,7 @@ class Arguments extends Component {
     this.socket = io()
 
     this.socket.on('message' ,chat=>{
-        if(chat._id===this.state.currentChat){
 
-        }else{
-            this.setState({unread:[...chat._id]})
-        }
     })
     this.socket = io('https://argu-chat.herokuapp.com/')
 

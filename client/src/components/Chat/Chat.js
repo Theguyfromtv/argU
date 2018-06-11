@@ -7,11 +7,9 @@ import io from 'socket.io-client'
 
 class Chat extends Component {
    state={
-     currentChat:"",
-     messages:["message1", "message2"],
-     currentStage:"",
+     currentChat:{},
+     messages:[],
      currentMessage:{},
-     turn:false,
      side:false,
      user:{},
      inputtedMessage:{},
@@ -24,6 +22,14 @@ class Chat extends Component {
       })
    }
    getChat=()=>{
+    
+      let currentChatArr=window.location.href.split('&')
+        currentChatArr=currentChatArr[1]
+        let newCurrentChat=currentChatArr.split('=')
+        newCurrentChat=newCurrentChat[1]
+        console.log(newCurrentChat)
+        const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
+        this.setState({currentChat:findChat})
      
    }
 
@@ -36,16 +42,10 @@ class Chat extends Component {
       if(chat._id===this.state.currentChat){
         const newMessages=chat.messages
         this.setState({messages:newMessages})
-        console.log(chat)
-        if(chat.messages[chat.messages.length-1].sender===this.state.user._id){
-
-        }else{
-          this.setState({turn:true})
-        }
-      }
-      
-    })
-   }
+        console.log(chat)      
+    }
+   })
+  }
    componentWillUnmount() {
     this.socket.close();
   }

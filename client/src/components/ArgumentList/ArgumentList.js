@@ -27,7 +27,7 @@ class ArgumentList extends Component {
       <div className="col-sm-4 sidebar">
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
-         <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleTopics.bind(this)}>Topics</button>
+         <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleTopics.bind(this)}>Opinions</button>
          {this.state.isHidden && <Topics user={this.props.user} topics={[{name:"Trump",id:"1"}, {name:"Abortion",id:"2"},{name:"Star Wars: The Last Jedi", id:"3"}]}/>}
        </div>
        <div className="sidebar">
