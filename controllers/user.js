@@ -47,21 +47,22 @@ userController.updateTopics=(req,res)=>{
             turn=false
           }*/
           //creating the chat. sending the first message letting them know they matched and then adding the new chat to the user's files on the db, then sending back a response with the updated user object
-          Chat.create({participant1id:participant1._id, participant1name:participant1.name,participant1read:false, participant2id:participant2._id, participant2name:participant2.name,participant2read:false,isActive:true}).exec((err,chat)=>{
+          Chat.create({participant1id:participant1._id, participant1name:participant1.name,participant1read:false, participant2id:participant2._id, participant2name:participant2.name,participant2read:false,isActive:true}).then((err,chat)=>{
             if (err) throw err
             let initMessage ={sender:system,message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!", type:system}
             Chat.findOneAndUpdate({_id:chat_id},{$push:{messages:initMessage}})
             let chatId=chat._id
 
-            User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}}).exec((err,user)=>{
+            User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}}).then((err,user)=>{
               if (err) throw err
               io.emit('match',user)
             })
-            User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}}).exec((err,user)=>{
+            User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}}).then((err,user)=>{
               if (err) throw err
               io.emit('match',user)              
             })
           })
+          res.send("match!")
       }else{
         res.send("no matches")
       }
