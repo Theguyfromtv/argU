@@ -62,6 +62,8 @@ userController.updateTopics=(req,res)=>{
               io.emit('match',user)              
             })
           })
+      }else{
+        res.send("no matches")
       }
 
 

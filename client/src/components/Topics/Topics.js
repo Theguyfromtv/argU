@@ -15,13 +15,20 @@ import API from '../../utils/API'
   getUser=()=>{
     if (window.location.hash == "#_=_")
     {
-    window.location.hash = "";
+      let userArr=window.location.href.split('=')
+      let userId=userArr[1]
+      let userFinalId=userId.split('#')
+      userId=userFinalId[0]
+      this.setState({userid:userId})
     }
-    let userArr=window.location.href.split('=')
-    let userId=userArr[1]
-    let userFinalId=userId.split('#')
-    userId=userFinalId[0]
-    this.setState({userid:userId})
+    else{
+      let userArr=window.location.href.split('=')
+      let userId=userArr[1]
+      let userFinalId=userId.split('&')
+      userId=userFinalId[0]
+      this.setState({userid:userId})
+    }
+    
   }
   
   handleChange1=()=>{
@@ -34,7 +41,7 @@ import API from '../../utils/API'
     this.setState({ topic3Val:!this.state.topic3Val })
   }
   sendChange=(topic,side,id)=>{
-    API.updateTopics(topic,side,id)
+    API.updateTopics(topic,side,id).then(res=>{console.log(res)})
   }
   componentDidMount(){
     this.getUser()
