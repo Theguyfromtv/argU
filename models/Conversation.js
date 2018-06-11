@@ -42,6 +42,9 @@ var chatSchema = new Schema({
   },
   read:{
     type:Boolean
+  },
+  turn:{
+    type:Boolean,
   }
   
 });

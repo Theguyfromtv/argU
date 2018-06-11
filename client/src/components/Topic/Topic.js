@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Switch from "react-switch";
 
 
-let props = props
 export default class Topic extends Component {
     state={
         topicVal:true
@@ -16,12 +15,12 @@ export default class Topic extends Component {
   render() {
     return (
       <div>
-        <label htmlFor={props.topic}>
-        <span>{props.topic}</span>
+        <label htmlFor={this.props.topic}>
+        <span>{this.props.topic}</span>
         <Switch
           onChange={this.handleChange}
           checked={this.state.checked}
-          id={props.topic}
+          id={this.props.topic}
           offColor="#eb3c24"
           onColor="#3385f7"
           uncheckedIcon={<i className="fas fa-minus-circle"></i>}

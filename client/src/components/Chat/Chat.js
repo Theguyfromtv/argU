@@ -14,12 +14,17 @@ class Chat extends Component {
      turn:false,
      side:false,
      user:{},
-     inputtedMessage:{}
+     inputtedMessage:{},
+     color:""
    }
    sendMessage=()=>{
+
       API.sendMessage().then(()=>{
         this.setState({turn:false})
       })
+   }
+   getChat=()=>{
+     
    }
 
   
@@ -53,35 +58,6 @@ class Chat extends Component {
           <div id="chatView">
 
             <div className="messageView">
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
-            Test <br/>
 
             {this.state.messages.map((message,index)=>{
         
