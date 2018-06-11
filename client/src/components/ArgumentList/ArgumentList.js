@@ -13,7 +13,8 @@ class ArgumentList extends Component {
       topics:[]
   }
   getTopics=()=>{
-      this.setState({topics:["Trump", "Abortion", "Star Wars: The Last Jedi"]})
+      const newTopics=["Trump", "Abortion", "Star Wars: The Last Jedi"]
+      this.setState({topics:newTopics})
       console.log(this.state.topics)
 
   }
