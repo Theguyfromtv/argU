@@ -30,7 +30,6 @@ class Arguments extends Component {
   loadChats=()=>{
     let newChats=this.state.user.chats
     this.setState({chats:newChats})
-    console.log(newChats)
   }
   loadCurrentChat=()=>{
       let currentChatArr=window.location.href.split('&')
@@ -47,8 +46,10 @@ class Arguments extends Component {
     this.setState({isHidden: !this.state.isHidden})
   
   }
-  componentDidMount(){
+  componentWillMount(){
     this.loadUser()
+  }
+  componentDidMount(){
     this.loadChats()
     this.loadCurrentChat()
     

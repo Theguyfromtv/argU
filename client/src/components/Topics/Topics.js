@@ -8,25 +8,11 @@ import API from '../../utils/API'
     topic1Val:true,
     topic2Val:true,
     topic3Val:true,
-    userid:""
+    user:{}
 
   }
   getUser=()=>{
-    if (window.location.hash == "#_=_")
-    {
-      let userArr=window.location.href.split('=')
-      let userId=userArr[1]
-      let userFinalId=userId.split('#')
-      userId=userFinalId[0]
-      this.setState({userid:userId})
-    }
-    else{
-      let userArr=window.location.href.split('=')
-      let userId=userArr[1]
-      let userFinalId=userId.split('&')
-      userId=userFinalId[0]
-      this.setState({userid:userId})
-    }
+    this.setState({user:this.props.user})
     
   }
   getTopics=(id)=>{
