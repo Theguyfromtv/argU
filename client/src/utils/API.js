@@ -25,7 +25,7 @@ const API= {
 
     },
     getTopics:()=>{
-      return axios.get('/login/topics')
+      return axios.get('/login/alltopics')
     }
   };
 
