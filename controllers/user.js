@@ -1,7 +1,7 @@
 const User=require('../models/User')
 const Chat=require('../models/Conversation')
 const Topic=require('../models/Topic')
-const io=require ('socket.io-client')
+const io=require ('../server')
 
 //controller to get the signed in user
 
@@ -52,6 +52,7 @@ userController.updateTopics=(req,res)=>{
             let initMessage ={sender:"system",message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!"}
             Chat.findOneAndUpdate({_id:chat._id},{$push:{messages:initMessage}})
             let chatId=chat._id
+            io.emit('match', chat)
               
             User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}},function(err,user){
               if (err) throw err
