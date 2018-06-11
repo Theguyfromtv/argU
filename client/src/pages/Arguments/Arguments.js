@@ -23,13 +23,14 @@ class Arguments extends Component {
     API.getUser(userId).then((res)=>{
         this.setState({user:res.data})
         console.log(this.state.user)
+        this.setState({chats:res.data.chats})
+        console.log(this.state.chats)
+
     })
     
 
   }
-  loadChats=()=>{
-    console.log(this.state.user.chats)
-  }
+
   loadCurrentChat=()=>{
       let currentChatArr=window.location.href.split('&')
       if(currentChatArr[1]){      
@@ -49,7 +50,6 @@ class Arguments extends Component {
     this.loadUser()
   }
   componentDidMount(){
-    this.loadChats()
     this.loadCurrentChat()
     
     this.socket = io()
