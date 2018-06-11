@@ -22,8 +22,7 @@ class Topic extends Component {
         <span>{this.props.topic}</span>
         <Switch
           onChange={this.handleChange}
-          checked={this.state.checked}
-          id={this.props.topic}
+          checked={this.state.topicVal}
           offColor="#eb3c24"
           onColor="#3385f7"
           uncheckedIcon={<i className="fas fa-minus-circle"></i>}
