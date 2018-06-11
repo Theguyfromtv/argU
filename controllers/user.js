@@ -67,6 +67,7 @@ userController.updateTopics=(req,res)=>{
 })}
 
 userController.getTopics=(req,res)=>{
+  console.log(req)
   Topic.find({}).exec(err,result=>{
     if (err) throw err
     console.log(result);
