@@ -10,12 +10,8 @@ class ArgumentList extends Component {
   state={
       isHidden:false,
       unread: this.props.unread,
-      topics:[]
   }
   getTopics=()=>{
-      const newTopics=["Trump", "Abortion", "Star Wars: The Last Jedi"]
-      this.setState({topics:newTopics})
-      console.log(this.state.topics)
 
   }
   
@@ -24,7 +20,6 @@ class ArgumentList extends Component {
     
   }
   componentDidMount(){
-    this.getTopics()
   }
   render(){
     return (
@@ -32,7 +27,7 @@ class ArgumentList extends Component {
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
          <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleTopics.bind(this)}>Topics</button>
-         {this.state.isHidden && <Topics topics={this.state.topics}/>}
+         {this.state.isHidden && <Topics topics={["Trump", "Abortion", "Star Wars: The Last Jedi"]}/>}
        </div>
        <div className="sidebar">
          {this.props.chats? this.props.chats.map(chat=>
