@@ -7,9 +7,18 @@ import Switch from "react-switch";
   state={
     topic1Val:true,
     topic2Val:true,
-    topic3Val:true
+    topic3Val:true,
+    userid:""
 
   }
+  getUser=()=>{
+    let userArr=window.location.href.split('=')
+    let userId=userArr[1]
+    let userFinalId=userId.split('&')
+    userId=userFinalId[0]
+    this.setState({userid:userId})
+  }
+  
   handleChange1=()=>{
     this.setState({ topic1Val:!this.state.topic1Val })
   }
@@ -19,8 +28,8 @@ import Switch from "react-switch";
   handleChange3=()=>{
     this.setState({ topic3Val:!this.state.topic3Val })
   }
-  sendChange=(topicVal)=>{
-  
+  sendChange=(topic,side,id)=>{
+    
   }
   componentDidMount(){
   console.log("topic mounted")

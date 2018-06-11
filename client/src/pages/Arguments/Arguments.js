@@ -22,7 +22,7 @@ class Arguments extends Component {
     userId=userFinalId[0]
     API.getUser(userId).then((res)=>{
         this.setState({user:res.data})
-        //console.log(this.state.user)
+        console.log(this.state.user)
     })
     
 
@@ -70,9 +70,6 @@ class Arguments extends Component {
 }
     
     
-    
-
-
   render() {
     return (
       <div className="container-fluid">

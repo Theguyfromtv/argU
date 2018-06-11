@@ -22,7 +22,7 @@ userController.updateTopics=(req,res)=>{
   let newTopic=req.body.name
   let newSide=req.body.side
  let topic={topic:newTopic,side:newSide}
- User.findOneAndUpdate({_id:req.body.eid}, {$push:{topics:topic}}).exec((err,user1)=>{
+ User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}}).exec((err,user1)=>{
    if (err) throw err
    else{
     //find one who disagrees on the same topic and create a promise that creates a new chat on the db
