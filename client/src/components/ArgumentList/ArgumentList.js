@@ -14,7 +14,7 @@ class ArgumentList extends Component {
   }
   getTopics=()=>{
     API.getTopics().then((newTopics)=>{
-      this.setState({topics:newTopics})
+      this.setState({topics:[...newTopics]})
     })
   }
   
