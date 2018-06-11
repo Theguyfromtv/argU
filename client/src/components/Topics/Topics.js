@@ -6,7 +6,8 @@ import Topic from '../../components/Topic/Topic'
     <div>
       <h4>Your current opinions</h4>
       {props.topics.map(topic=>{
-        <Topic topic={topic}/>
+        <Topic key={topic.id}
+        topic={topic.name}/>
       })}
     </div>
   )
