@@ -14,7 +14,7 @@ export default class Topic extends Component {
     }
   render() {
     return (
-      <div>
+      <div className="card">
         <label htmlFor={this.props.topic}>
         <span>{this.props.topic}</span>
         <Switch
