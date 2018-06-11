@@ -23,7 +23,6 @@ class ArgumentList extends Component {
   
   }
   componentDidMount(){
-    this.test()
   }
   render(){
     return (
