@@ -64,9 +64,10 @@ class Arguments extends Component {
             this.setState({unread:[...chat._id]})
         }
     })
-    this.socket = io()
+    this.socket = io('https://argu-chat.herokuapp.com/')
 
     this.socket.on("match", (chat)=>{
+        console.log("new match!")
         this.setState({chats:[...chat]})
     })
 
