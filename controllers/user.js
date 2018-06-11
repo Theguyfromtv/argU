@@ -62,7 +62,6 @@ userController.updateTopics=(req,res)=>{
               res.send(user2.name+"added chat")            
             })
           })
-          res.send("match!")
       }else{
         res.send("no matches")
       }
