@@ -31,8 +31,10 @@ userController.updateTopics=(req,res)=>{
  User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}},function(err,user1){
    if (err) throw err
    else{
+     console.log(user1)
     //find one who disagrees on the same topic and create a promise that creates a new chat on the db
     User.findOne({topics:{$elemMatch:{topic:newTopic,side:!newSide}}},function(err,user2){
+      console.log(user2)
       if(user1._id===user2._id){
         res.send("no matches")
       }
