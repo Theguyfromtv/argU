@@ -22,7 +22,6 @@ import API from '../../utils/API'
     let userFinalId=userId.split('&')
     userId=userFinalId[0]
     this.setState({userid:userId})
-    console.log(userId)
   }
   
   handleChange1=()=>{
