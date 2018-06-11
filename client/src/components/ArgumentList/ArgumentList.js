@@ -10,7 +10,7 @@ class ArgumentList extends Component {
   state={
       isHidden:false,
       unread: this.props.unread,
-      topics:[]
+      topics:["Trump", "Abortion", "Star Wars: The Last Jedi"]
   }
   getTopics=()=>{
     API.getTopics().then((newTopics)=>{
@@ -24,7 +24,6 @@ class ArgumentList extends Component {
   
   }
   componentDidMount(){
-    this.getTopics()
   }
   render(){
     return (
