@@ -53,12 +53,12 @@ userController.updateTopics=(req,res)=>{
             Chat.findOneAndUpdate({_id:chat._id},{$push:{messages:initMessage}})
             let chatId=chat._id
               
-            User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}}).then((err,user)=>{
+            User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}},function(err,user){
               if (err) throw err
               io.emit('match',user)
               console.log(chatId)             
             })
-            User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}}).then((err,user)=>{
+            User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}},function(err,user){
               if (err) throw err
               io.emit('match',user) 
               console.log(chatId)             
