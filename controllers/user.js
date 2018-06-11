@@ -75,13 +75,7 @@ userController.updateTopics=(req,res)=>{
 
 })}
 
-userController.getTopics=(req,res)=>{
-  User.findOne({_id:req.params.id}, function(err,user){
-    if (err) throw err
-    res.json(user)
-  })
 
-}
 
 
 module.exports = userController;
