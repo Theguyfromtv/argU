@@ -23,6 +23,7 @@ class ArgumentList extends Component {
   
   }
   componentDidMount(){
+    this.getTopics()
   }
   render(){
     return (
