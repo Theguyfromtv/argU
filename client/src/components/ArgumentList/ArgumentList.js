@@ -10,7 +10,6 @@ class ArgumentList extends Component {
 
   state={
       isHidden:false,
-      unread: this.props.unread,
   }
   getTopics=()=>{
 
@@ -41,8 +40,6 @@ class ArgumentList extends Component {
          participant2name={chat.participant2name}
          user={this.props.user}
          topic={chat.topic}
-         unread={this.state.unread.includes(chat._id)}
-         markRead={this.toggleUnread}
          />
          ): <h4>You have no arguments yet, tell us your opinions and find some!</h4>}
  
