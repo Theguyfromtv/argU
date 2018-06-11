@@ -26,6 +26,17 @@ const API= {
     },
     getTopics:()=>{
       return axios.get('/login/alltopics')
+    },
+    updateTopics:(topic,side,id)=>{
+      axios({
+        method:'post',
+        url:'/login/topics',
+        body:{
+          id:id,
+          topic: topic,
+          side:side
+        }
+      })
     }
   };
 
