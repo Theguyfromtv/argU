@@ -14,7 +14,8 @@ class ArgumentList extends Component {
   }
   getTopics=()=>{
       this.setState({topics:["Trump", "Abortion", "Star Wars: The Last Jedi"]})
-      console.log("updated topics")
+      console.log(this.state.topics)
+
   }
   
   toggleTopics=()=>{
