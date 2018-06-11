@@ -20,14 +20,7 @@ class Topic extends Component {
       <div className="card">
         <label htmlFor={this.props.topic}>
         <span>{this.props.topic}</span>
-        <Switch
-          onChange={this.handleChange}
-          checked={this.state.topicVal}
-          offColor="#eb3c24"
-          onColor="#3385f7"
-          uncheckedIcon={<i className="fas fa-minus-circle"></i>}
-          checkedIcon={<i className="fas fa-plus-circle"></i>}
-        />
+
      <button className="btn btn-lg btn-primary btn-sidebar">Save</button>
 
       </label>
