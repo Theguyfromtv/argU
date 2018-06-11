@@ -63,6 +63,7 @@ userController.updateTopics=(req,res)=>{
 
           })
       }else{
+        console.log(user1)
         res.send("no matches")
       }
 
