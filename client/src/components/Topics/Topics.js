@@ -49,7 +49,7 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.userid)}}>Save</button>
+      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>Save</button>
 
       </label>
       </div>
