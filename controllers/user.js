@@ -1,7 +1,7 @@
 const User=require('../models/User')
 const Chat=require('../models/Conversation')
 const Topic=require('../models/Topic')
-import io from 'socket.io-client'
+const io=require ('socket.io-client')
 
 //controller to get the signed in user
 
