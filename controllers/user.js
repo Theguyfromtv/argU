@@ -23,7 +23,7 @@ userController.updateTopics=(req,res)=>{
   //naming the new topic and pushing it into the user on the db
   console.log(req.body)
   let newTopic=req.body.topic
-  console.log
+  console.log(newTopic)
   let newSide=req.body.side
  let topic={topic:newTopic,side:newSide}
  User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}}).exec((err,user1)=>{
