@@ -19,6 +19,7 @@ userController.login=function(req, res) {
 //controller to update the user's topics, and looks for matches with other users who have opposite opinions on the same topic
 userController.updateTopics=(req,res)=>{
   //naming the new topic and pushing it into the user on the db
+  console.log(req.body)
   let newTopic=req.body.name
   let newSide=req.body.side
  let topic={topic:newTopic,side:newSide}
@@ -34,15 +35,15 @@ userController.updateTopics=(req,res)=>{
         user1=participant2;
         user2=participant2;
       }
-          let coinflip= Math.floor(Math.random() * 2);
+          /*let coinflip= Math.floor(Math.random() * 2);
           let turn
           if(coinflip==1){
             turn=true
           }else if (coinflip==0){
             turn=false
-          }
+          }*/
           //creating the chat. sending the first message letting them know they matched and then adding the new chat to the user's files on the db, then sending back a response with the updated user object
-          Chat.create({participant1id:participant1._id, participant1name:participant1.name, participant2id:participant2._id, participant2name:participant2.name,isActive:true, read:false, stage:"Opening Arguments", turn:turn}).exec((err,chat)=>{
+          Chat.create({participant1id:participant1._id, participant1name:participant1.name,participant1read:false, participant2id:participant2._id, participant2name:participant2.name,participant2read:false,isActive:true}).exec((err,chat)=>{
             if (err) throw err
             let initMessage ={sender:system,message:"You matched with someone who desagrees on"+req.body.name+"! Time to argu!", type:system}
             Chat.findOneAndUpdate({_id:chat_id},{$push:{messages:initMessage}})
