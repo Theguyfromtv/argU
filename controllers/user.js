@@ -18,8 +18,8 @@ userController.login=function(req, res) {
 
 //controller to update the user's topics, and looks for matches with other users who have opposite opinions on the same topic
 userController.updateTopics=(req,res)=>{
-  const participant1={};
-  const participant2={};
+  let participant1
+  let participant2
   //naming the new topic and pushing it into the user on the db
   console.log(req.body)
   let newTopic=req.body.name
