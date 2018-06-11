@@ -17,9 +17,7 @@ class Chat extends Component {
    }
    sendMessage=()=>{
 
-      API.sendMessage().then(()=>{
-        this.setState({turn:false})
-      })
+      API.sendMessage()
    }
    getChat=()=>{
     
@@ -30,6 +28,7 @@ class Chat extends Component {
         console.log(newCurrentChat)
         const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
         this.setState({currentChat:findChat})
+        this.setState({messages:findChat.messages})
      
    }
 
