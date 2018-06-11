@@ -36,15 +36,11 @@ var chatSchema = new Schema({
     type:String,
     required:true
   },
-  stage:{
-    type:String,
-    required:true
-  },
-  read:{
+  participant1read:{
     type:Boolean
   },
-  turn:{
-    type:Boolean,
+  participant2read:{
+    type:Boolean
   }
   
 });
