@@ -10,20 +10,19 @@ class ArgumentList extends Component {
   state={
       isHidden:false,
       unread: this.props.unread,
-      topics:["Trump", "Abortion", "Star Wars: The Last Jedi"]
+      topics:[]
   }
   getTopics=()=>{
-    API.getTopics().then((newTopics)=>{
-      console.log(newTopics)
-      this.setState({topics:[...newTopics]})
-    })
+      this.setState({topics:["Trump", "Abortion", "Star Wars: The Last Jedi"]})
+      console.log("updated topics")
   }
   
   toggleTopics=()=>{
     this.setState({isHidden: !this.state.isHidden})
-  
+    
   }
   componentDidMount(){
+    this.getTopics()
   }
   render(){
     return (

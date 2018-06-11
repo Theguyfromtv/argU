@@ -26,7 +26,7 @@ export default class Topic extends Component {
           uncheckedIcon={<i className="fas fa-minus-circle"></i>}
           checkedIcon={<i className="fas fa-plus-circle"></i>}
         />
-     <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleHidden.bind(this)}>Save</button>
+     <button className="btn btn-lg btn-primary btn-sidebar">Save</button>
 
       </label>
       </div>
