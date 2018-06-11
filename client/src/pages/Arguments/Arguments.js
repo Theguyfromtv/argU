@@ -29,7 +29,8 @@ class Arguments extends Component {
   }
   loadChats=()=>{
     let newChats=this.state.user.chats
-    this.setState({chats:newChats})
+    this.setState({chats:[...newChats]})
+    console.log(newChats)
   }
   loadCurrentChat=()=>{
       let currentChatArr=window.location.href.split('&')
