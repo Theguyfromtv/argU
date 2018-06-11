@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Switch from "react-switch";
 
 
-export default class Topic extends Component {
+class Topic extends Component {
     state={
         topicVal:true
     }
@@ -36,3 +36,5 @@ export default class Topic extends Component {
     )
   }
 }
+
+export default Topic

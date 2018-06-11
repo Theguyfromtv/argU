@@ -1,7 +1,7 @@
 import React from 'react'
 import Topic from '../../components/Topic/Topic'
 
-export default (props) => {
+ const Topics=(props) => {
   return (
     <div>
       <h4>Your current opinions</h4>
@@ -12,3 +12,4 @@ export default (props) => {
   )
 }
 
+export default Topics
