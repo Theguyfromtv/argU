@@ -37,6 +37,7 @@ userController.updateTopics=(req,res)=>{
          participant2=user1;
          participant1=user2;
       }
+      if(user2){
           /*let coinflip= Math.floor(Math.random() * 2);
           let turn
           if(coinflip==1){
@@ -60,6 +61,8 @@ userController.updateTopics=(req,res)=>{
               io.emit('match',user)              
             })
           })
+      }
+
 
     })
 
