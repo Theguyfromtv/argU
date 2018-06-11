@@ -75,7 +75,7 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.userid)}}>Save</button>
+      <button className="btn btn-lg btn-primary btn-sidebar" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>Save</button>
 
       </label>
       </div>
@@ -88,7 +88,7 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.userid)}}>Save</button>
+      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>Save</button>
 
       </label>
       </div>
