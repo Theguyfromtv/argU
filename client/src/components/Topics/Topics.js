@@ -19,7 +19,7 @@ import API from '../../utils/API'
     }
     let userArr=window.location.href.split('=')
     let userId=userArr[1]
-    let userFinalId=userId.split('&')
+    let userFinalId=userId.split('#')
     userId=userFinalId[0]
     this.setState({userid:userId})
   }
