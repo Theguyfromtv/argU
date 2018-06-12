@@ -37,16 +37,15 @@ import API from '../../utils/API'
   getOpinions=()=>{
     for (let i =0 ; i<this.props.user.topics; i++){
       if(this.props.user.topics[i].name===this.props.topics[0].name){
-        this.setState({topic1Val:this.state.user.topics[i].side})
+        this.setState({topic1Val:this.props.user.topics[i].side})
       }else if(this.props.user.topics[i].name===this.props.topics[1].name){
-        this.setState({topic2Val:this.state.user.topics[i].side})
+        this.setState({topic2Val:this.props.user.topics[i].side})
     }else if(this.props.user.topics[i].name===this.props.topics[2].name){
-      this.setState({topic3Val:this.state.user.topics[i].side})
+      this.setState({topic3Val:this.props.user.topics[i].side})
       }
     }
   }
   componentDidMount(){
-    this.getUser()
     this.getOpinions()
   }
 
