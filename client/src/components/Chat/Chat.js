@@ -2,9 +2,9 @@ import React from 'react'
 import './Chat.css'
 import Message from '../Message/Message'
 
-const Chat=(props)=> {
+const Chat=(props)=> (
 
-    return (
+
     <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
@@ -35,8 +35,8 @@ const Chat=(props)=> {
 
         </div>
       </div>
-    );
-  }
+
+)
 
 
 
