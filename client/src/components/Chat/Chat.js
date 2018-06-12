@@ -21,8 +21,8 @@ const Chat=(props)=> (
                 user={props.user}/>
                 ))}
             </div>
-            <div className=" input">
-              <div className="row ">
+            <div className="input">
+              <div className="row bottom">
                 <div className="col-sm-10 bottom1">
                   <textarea class="text-box form-control" onChange={props.onChange}/>
                 </div>
