@@ -93,6 +93,7 @@ class Arguments extends Component {
       if(message.chatId===this.state.currentChat._id){
         const newMessage=message
         const newMessages=this.state.messages.push(newMessage);
+        console.log(newMessages)
         this.setState({messages:[newMessages]})
         console.log(message)      
     }else{
