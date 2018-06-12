@@ -45,8 +45,6 @@
 .input{
     position: fixed;
     bottom: 0;
-    background-color: aquamarine;
-    border-radius:75px 75px 0px 0px;
 }
 
 .form-control{
@@ -60,8 +58,6 @@
 }
 
 textarea{
-    width: 90%;
-    z-index: -1;
     resize: none
 
 }
