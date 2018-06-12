@@ -48,7 +48,7 @@ import API from '../../utils/API'
       }
     }
   }
-  componentDidMount(){
+  componentWillMount(){
     this.getOpinions()
   }
 
