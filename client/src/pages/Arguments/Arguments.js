@@ -15,7 +15,8 @@ class Arguments extends Component {
         currentChat:{},
         messages:[],
         side:false,
-        className:""
+        className:"",
+        newMessage:""
         
     }
   loadUser=()=>{
@@ -60,9 +61,12 @@ class Arguments extends Component {
         })
 
     })
+    }
     
-
-  }
+  handleChange=(event)=>{
+    this.setState({newMessage: event.target.value});
+  }  
+  
 
   loadCurrentChat=()=>{
         
@@ -110,7 +114,8 @@ class Arguments extends Component {
                     user={this.state.user}
                     side={this.state.side}
                     className={this.state.className}
-                    messages={this.state.messages}/>
+                    messages={this.state.messages}
+                    onChange={this.handleChange}/>
                 </div>
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
@@ -126,7 +131,8 @@ class Arguments extends Component {
                 user={this.state.user}
                 side={this.state.side}
                 className={this.state.className}
-                messages={this.state.messages}/>}
+                messages={this.state.messages}
+                onChange={this.handleChange}/>}
 
                 
             </MediaQuery>
