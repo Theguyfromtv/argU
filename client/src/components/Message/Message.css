@@ -4,3 +4,7 @@
     margin: 10px;
 }
 
+.row{
+    width: 100%;
+    display: block;
+}
