@@ -67,7 +67,7 @@ import 'react-slidedown/lib/slidedown.css'
   return (
 <Merge
   one={{ name: slideDown, duration: '2s', timingFunction: 'ease-in' }}
-  two={{ name: slideUp, duration: '2s', timingFunction: 'ease-out' }}
+  two={{ name: slideUp, duration: '2s', timingFunction: 'ease-out' , direction:'reverse'}}
   as="div">
     <div className="card topics">
       <div className="card-body">
