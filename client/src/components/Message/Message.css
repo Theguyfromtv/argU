@@ -1,4 +1,6 @@
 .message{
     float: left;
     clear: both;
+    display: block;
+    display: flex;
 }
