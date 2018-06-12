@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Argument from '../Argument/Argument'
 import Topics from '../Topics/Topics'
 import API from '../../utils/API'
+import {SlideDown} from 'react-slidedown'
 import "./ArgumentList.css"
 
 
@@ -23,6 +24,7 @@ class ArgumentList extends Component {
   }
   render(){
     return (
+      <SlideDown>
       <div className="col-sm-4 sidebar">
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
@@ -48,6 +50,7 @@ class ArgumentList extends Component {
        </div>
  
      </div>
+     </SlideDown>
     )
   
 }
