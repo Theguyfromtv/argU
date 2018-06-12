@@ -14,7 +14,7 @@ const Chat=(props)=> (
             </div>
           </div>
             <div className="row chat">
-                <div col-12>
+                <div className="col-12">
                 {props.messages.map(message=>(
               <Message 
                 message={message}
