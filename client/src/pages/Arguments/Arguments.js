@@ -28,6 +28,34 @@ class Arguments extends Component {
         })
         API.getChats(userId).then(res=>{
             this.setState({chats:res.data.chats})
+            if(window.location.hash===""){
+                let currentChatArr=window.location.href.split('&')
+                currentChatArr=currentChatArr[1]
+                let newCurrentChat=currentChatArr.split('=')
+                newCurrentChat=newCurrentChat[1]
+                console.log(newCurrentChat)
+
+                  const findChat = this.state.chats.find( chat => chat._id === newCurrentChat );
+                  if(findChat){
+                    this.setState({currentChat:findChat})
+                    console.log(this.state.currentChat)
+                    this.setState({messages:findChat.messages})
+                    if(this.state.currentChat.participant1id===this.state.user._id){
+                    this.setState({side:true})
+                    this.setState({className:"pro"})
+                    }else if(this.state.currentChat.participant2id===this.state.user._id){
+                    this.setState({side:false})
+                    this.setState({className:"con"})
+                    }else{
+                    return "pick an argument to see messages"
+                  }
+          
+                }
+                
+                
+             
+              }
+          
 
         })
 
@@ -37,34 +65,7 @@ class Arguments extends Component {
   }
 
   loadCurrentChat=()=>{
-        if(window.location.hash===""){
-          let currentChatArr=window.location.href.split('&')
-          currentChatArr=currentChatArr[1]
-          let newCurrentChat=currentChatArr.split('=')
-          newCurrentChat=newCurrentChat[1]
-          console.log(newCurrentChat)
-          if(this.state.chats){
-            const findChat = this.state.chats.find( chat => chat._id === newCurrentChat );
-            if(findChat){
-              this.setState({currentChat:findChat})
-              console.log(this.state.currentChat)
-              this.setState({messages:findChat.messages})
-              if(this.state.currentChat.participant1id===this.state.user._id){
-              this.setState({side:true})
-              this.setState({className:"pro"})
-              }else if(this.state.currentChat.participant2id===this.state.user._id){
-              this.setState({side:false})
-              this.setState({className:"con"})
-              }else{
-              return "pick an argument to see messages"
-            }
-    
-          }
-          }
-          
-       
-        }
-    
+        
          
        
     }
