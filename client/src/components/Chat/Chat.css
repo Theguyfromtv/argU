@@ -1,9 +1,4 @@
 #chatView{
-    width: 100%;
-    background-color: white;
-    display: flex;
-    overflow-y: scroll;
-    border-radius:0px 0px 0px 0px;
     height: 100vh
 
 }
@@ -38,7 +33,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    display: block;
+    display: block
 }
 
 .actions{
