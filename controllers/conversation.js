@@ -19,12 +19,10 @@ chatController.getMessages= (req,res)=>{
 
 chatController.sendMessage=(req,res)=>{
   console.log(req)
-  let message = {sender:req.body.sender,message:req.body.message,type:req.body.type}
+  let message = {sender:req.body.sender,message:req.body.message,side:req.body.side}
   Chat.findOneAndUpdate({_id:req.body.id},{$push:{messages:message}}).exec((err,chat)=>{
     if (err) throw err
-    else{
-      io.emit('message', chat);
-    }
+
   })
 }
 
