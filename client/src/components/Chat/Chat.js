@@ -6,11 +6,9 @@ const Chat=(props)=> (
 
 
     <div className="col-sm-8 chat">
-          <div id="chatView">
             <div className="chatBar">
               <h4>Argument about:{props.currentChat.topic}</h4>
             </div>
-            <div className="messageView">
 
             {props.messages.map(message=>(
               <Message 
@@ -19,19 +17,14 @@ const Chat=(props)=> (
                 className={props.className}
                 user={props.user}/>
                 ))}
+            <form>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={props.onChange}></textarea>
             </div>
-            <div className="input">
-              <div className="row bottom">
-                <div className="col-sm-10 bottom1">
-                  <textarea class="text-box form-control" onChange={props.onChange}/>
-                </div>
-                  <div className="col-sm-2 bottom2">
-                  <button type="submit" className={"submit btn btn-primary "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
-                  </div>
-              </div>
-          </div>
-          </div>
-
+            <button type="submit" className={"submit btn btn-primary "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
+            </form>
+                  <textarea class="text-box form-control" />
       </div>
 
 )
