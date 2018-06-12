@@ -2,6 +2,9 @@
     height: 100vh;
     position: relative;
     z-index: 50;
+    display: flex;
+    flex-direction : column
+
 
 }
 .messageView{
@@ -47,6 +50,7 @@
 .input{
     position: fixed;
     bottom: 0;
+    width: 100%
 }
 
 .form-control{
