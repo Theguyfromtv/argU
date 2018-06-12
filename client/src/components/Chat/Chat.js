@@ -4,7 +4,6 @@ import Message from '../Message/Message'
 
 const Chat=(props)=> {
 
-
     return (
     <div className="col-sm-8 chat">
       <div className="overflow">
@@ -36,7 +35,7 @@ const Chat=(props)=> {
 
         </div>
       </div>
-    )
+    );
   }
 
 
