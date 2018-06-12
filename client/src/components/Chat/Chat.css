@@ -1,9 +1,10 @@
 #chatView{
-    height: 100vh;
-    position: relative;
-    z-index: 50;
-
-
+    width: 100%;
+    background-color: white;
+    display: flex;
+    overflow-y: scroll;
+    border-radius:0px 0px 0px 0px;
+    height: 100vh
 
 }
 .messageView{
@@ -15,7 +16,8 @@
     overflow-x: none;
     border-radius:0px 0px 0px 0px;
     margin-bottom: 50px;
-    flex-direction : column
+    flex-direction : column;
+    z-index: 50;
 }
 
 #chatView::-webkit-scrollbar { 
@@ -37,28 +39,24 @@
     position: fixed;
     top: 0;
     width: 100%;
-    display: block;
-    margin-bottom: 1px;
     z-index: 100;
-    background-color: white;
-    border-bottom: 1px;
-    border-color: black
 }
 
 .actions{
     height: 50px;
 }
-.container-fluid{
-    padding: 0;
-}
+
 .input{
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    width: 100%
+    width: 100%;
+    background-color: aquamarine;
+    border-radius:75px 75px 0px 0px;
 }
 
 .form-control{
     border-radius:75px 0px 0px 0px;
+    width: 100%;
     display: flex;
     padding:  0px 0px 0px 50px;
     max-height: 100px;
@@ -68,6 +66,8 @@
 }
 
 textarea{
+    width: 90%;
+    z-index: -1;
     resize: none
 
 }
@@ -77,9 +77,6 @@ textarea{
     height: 100%;
     border-radius: 0px 75px 0px 0px;
 
-}
-.bottom{
-    width:100%
 }
 
 .bottom1{
@@ -92,7 +89,7 @@ textarea{
     padding-left: 0;
 }
 
-input { overflow: hidden }
+input { overflow: expand; }
 
 
 
@@ -118,18 +115,10 @@ input { overflow: hidden }
     background-color: #3385f7;
 }
 
-.pro:active{
-    background-color: #3385f7;
-}
-
 .con{
     background-color: #eb3c24;
 }
 
 .con:hover{
-    background-color: #eb3c24;
-}
-
-.con:active{
     background-color: #eb3c24;
 }
