@@ -102,7 +102,7 @@ class Arguments extends Component {
     
   render() {
     return (
-      <div>
+      <div className="container-fluid">
            <MediaQuery query="(min-width: 769px)">
            <div className="row">
                 <ArgumentList
