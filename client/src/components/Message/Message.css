@@ -1,4 +1,6 @@
 .message{
     width: 100%;
     display: block;
+    float: left;
+    clear: both;
 }
