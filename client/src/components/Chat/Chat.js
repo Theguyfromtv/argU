@@ -6,10 +6,9 @@ const Chat=(props)=> (
 
 
     <div className="col-sm-8 chat">
-      <div className="container">
           <div id="chatView">
             <div className="chatBar">
-              <h3>Argument about:{props.currentChat.topic}</h3>
+              <h4>Argument about:{props.currentChat.topic}</h4>
             </div>
             <div className="messageView">
 
@@ -33,7 +32,6 @@ const Chat=(props)=> (
           </div>
           </div>
 
-        </div>
       </div>
 
 )
