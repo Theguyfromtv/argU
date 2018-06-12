@@ -27,7 +27,7 @@ const Chat=(props)=> {
                   <textarea class="text-box form-control"/>
                 </div>
                   <div className="col-sm-2 bottom2">
-                  <button type="submit" className={"submit btn btn-primary "+this.props.className}  onClick={this.sendMessage}><i className="zmdi zmdi-mail-send"></i></button>  
+                  <button type="submit" className={"submit btn btn-primary "+this.props.className} ><i className="zmdi zmdi-mail-send"></i></button>  
                   </div>
               </div>
           </div>
