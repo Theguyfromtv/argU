@@ -15,6 +15,7 @@ const Chat=(props)=> (
 
             {props.messages.map((message,index)=>{
         
+              return 
               <Message key={index}
                 message={message}
                 side={props.side}
