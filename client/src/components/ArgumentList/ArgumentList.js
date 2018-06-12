@@ -24,8 +24,8 @@ class ArgumentList extends Component {
   }
   render(){
     return (
-      <SlideDown>
-      <div className="col-sm-4 sidebar">
+      <SlideDown className="col-sm-4 sidebar">
+      <div >
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
          <button className="btn btn-lg btn-primary btn-sidebar topicsButton" onClick={this.toggleTopics.bind(this)}>Opinions</button>
