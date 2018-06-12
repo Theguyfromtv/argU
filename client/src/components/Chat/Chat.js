@@ -13,12 +13,12 @@ const Chat=(props)=> (
             </div>
             <div className="messageView">
 
-            {props.messages.map(message=>{
+            {props.messages.map(message=>(
               <Message 
                 message={message}
                 side={props.side}
                 className={props.className}/>
-                })}
+                ))}
             </div>
             <div className=" input">
               <div className="row ">
