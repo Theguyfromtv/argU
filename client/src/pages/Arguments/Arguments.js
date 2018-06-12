@@ -51,10 +51,8 @@ class Arguments extends Component {
     this.setState({isHidden: !this.state.isHidden})
   
   }
-  componentWillMount(){
-    this.loadUser()
-  }
   componentDidMount(){
+    this.loadUser()
     this.loadCurrentChat()
     
     this.socket = io()
