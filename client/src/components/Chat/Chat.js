@@ -44,7 +44,7 @@ class Chat extends Component {
           this.setState({className:"pro"})
           }else if(this.state.currentChat.participant2id===this.state.user._id){
           this.setState({side:false})
-          this.setState({className:"#con"})
+          this.setState({className:"con"})
           }else{
           return "pick an argument to see messages"
         }
@@ -59,7 +59,7 @@ class Chat extends Component {
    }
 
   
-   componentDidMount=()=>{
+   componentWillMount=()=>{
      this.getChat()
     this.socket = io()
 
