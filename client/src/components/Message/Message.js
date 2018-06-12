@@ -7,8 +7,8 @@ import "./Message.css"
           {props.message.sender===props.user._id?
           <div>
             <p>{props.message.side?"Pro":"Con"}</p>
-            <div className={props.className} >
-              <div className>
+            <div className={"card "+props.className} >
+              <div className="card-body">
                 <p>{props.message.message}</p>
               </div>
             </div>
@@ -16,8 +16,8 @@ import "./Message.css"
           :
           <div>
             <h6>{props.message.side?"Pro":"Con"}</h6>
-            <div className>
-              <div className>
+            <div className={"card message"}>
+              <div className="card-body">
                 <p>{props.message.message}</p>
               </div>
             </div>
