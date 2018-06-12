@@ -9,6 +9,7 @@
 }
 .messageView{
     width: 100%;
+    max-width: 100%;
     background-color: gray;
     display: flex;
     overflow-y: scroll;
@@ -20,6 +21,11 @@
 #chatView::-webkit-scrollbar { 
     width: 0 !important 
 }
+
+#messageView::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
 
 .row{
 }
