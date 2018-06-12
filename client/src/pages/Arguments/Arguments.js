@@ -119,7 +119,12 @@ class Arguments extends Component {
                 user={this.state.user}
                 />}
                 {this.state.isHidden && <Chat
-                chat={this.state.currentChat}/>}
+                chats={this.state.chats}
+                currentChat={this.state.currentChat}
+                user={this.state.user}
+                side={this.state.side}
+                className={this.state.className}
+                messages={this.state.messages}/>}
 
                 
             </MediaQuery>
