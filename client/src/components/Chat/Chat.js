@@ -18,6 +18,8 @@ class Chat extends Component {
    sendMessage=(cid,message,uid,side)=>{
 
       API.sendMessage(cid,message,uid,side).then()
+      let newMessage={chatId:cid, message:message,senderId:uid,side:side}
+      io.emit('message',newMessage)
    }
    getChat=()=>{
     
@@ -42,7 +44,7 @@ class Chat extends Component {
   
    componentDidMount=()=>{
      this.getChat()
-    this.socket = io()
+    this.socket = io('')
 
     this.socket.on('message', (chat)=>{
       if(chat._id===this.state.currentChat){
