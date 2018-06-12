@@ -13,8 +13,7 @@ const Chat=(props)=> (
             </div>
             <div className="messageView">
 
-            {props.messages.map((message)=>{
-        
+            {props.messages.map(message=>{
               return 
               <Message 
                 message={message}
