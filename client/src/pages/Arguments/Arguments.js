@@ -20,6 +20,7 @@ class Arguments extends Component {
     let userId=userArr[1]
     let userFinalId=userId.split('&')
     userId=userFinalId[0]
+    console.log(userId)
     API.getUser(userId).then((res)=>{
         this.setState({user:res.data})
         console.log(this.state.user)
@@ -58,7 +59,7 @@ class Arguments extends Component {
     this.socket = io()
 
     this.socket.on('message' ,chat=>{
-
+        
     })
     this.socket = io('https://argu-chat.herokuapp.com/')
 
