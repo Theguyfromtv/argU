@@ -1,9 +1,13 @@
 .message{
     display: block;
     display: flex;
-    margin: 10px;
+    margin: 15px;
 }
 
 .row{
     width: 100%;
+}
+
+p{
+    margin-bottom: 5px;
 }

@@ -64,9 +64,10 @@ import API from '../../utils/API'
     <div className="card topics">
       <div className="row">
         <div className="col-12">
-          <p>Give us your opinions(these are reset every time so you can argu either side!)</p>
+          <p>Give us your opinions<br/>(these are reset every time so you can argu either side!)</p>
         </div>
       </div>
+      <hr/>
     
       <div className="row">
         <div className="col-4">
@@ -86,6 +87,7 @@ import API from '../../utils/API'
           <button className="btn btn-lg btn-primary btn-topics"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>argu!</button>
         </div>
       </div>
+      <hr/>
       <div className="row">
         <div className="col-4">
           <span>{this.props.topics[1].name}</span>
@@ -104,6 +106,7 @@ import API from '../../utils/API'
           <button className="btn btn-lg btn-primary btn-topics" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>argu!</button>
         </div>
       </div>
+      <hr/>
       <div className="row">
         <div className="col-4">
           <span>{this.props.topics[1].name}</span>
@@ -123,6 +126,7 @@ import API from '../../utils/API'
         <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>argu!</button>
         </div>
       </div>
+      <hr/>
     </div>
       )
   
