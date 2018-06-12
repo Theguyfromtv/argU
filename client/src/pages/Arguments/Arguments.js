@@ -41,6 +41,7 @@ class Arguments extends Component {
                     this.setState({currentChat:findChat})
                     console.log(this.state.currentChat)
                     this.setState({messages:findChat.messages})
+                    console.log(this.state.messages)
                     if(this.state.currentChat.participant1id===this.state.user._id){
                     this.setState({side:true})
                     this.setState({className:"pro"})
