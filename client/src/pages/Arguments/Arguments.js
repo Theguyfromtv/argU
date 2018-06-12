@@ -119,7 +119,8 @@ class Arguments extends Component {
                     className={this.state.className}
                     messages={this.state.messages}
                     onChange={this.handleChange}
-                    onClick={this.sendMessage}/>
+                    onClick={this.sendMessage}
+                    newMessage={this.state.newMessage}/>
                 </div>
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
@@ -137,7 +138,8 @@ class Arguments extends Component {
                 className={this.state.className}
                 messages={this.state.messages}
                 onChange={this.handleChange}
-                onClick={this.sendMessage}/>}
+                onClick={this.sendMessage}
+                newMessage={this.state.newMessage}/>}
 
                 
             </MediaQuery>

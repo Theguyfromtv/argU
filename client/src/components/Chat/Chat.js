@@ -24,10 +24,10 @@ const Chat=(props)=> (
             <div className=" input">
               <div className="row ">
                 <div className="col-sm-10 bottom1">
-                  <textarea class="text-box form-control"/>
+                  <textarea class="text-box form-control" onChange={props.onChange}/>
                 </div>
                   <div className="col-sm-2 bottom2">
-                  <button type="submit" className={"submit btn btn-primary "+props.className} onChange={props.onChange} ><i className="zmdi zmdi-mail-send"></i></button>  
+                  <button type="submit" className={"submit btn btn-primary "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
                   </div>
               </div>
           </div>
