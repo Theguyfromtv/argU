@@ -19,8 +19,8 @@ var messageSchema = new Schema({
     default: Date.now
   },
   // then we have the format of the message
-  format: {
-    type:String,
+  side: {
+    type:Boolean,
     required: true
   }
 },

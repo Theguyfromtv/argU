@@ -15,9 +15,9 @@ class Chat extends Component {
      inputtedMessage:"",
      color:""
    }
-   sendMessage=(cid,message,uid)=>{
+   sendMessage=(cid,message,uid,side)=>{
 
-      API.sendMessage(cid,message,uid).then()
+      API.sendMessage(cid,message,uid,side).then()
    }
    getChat=()=>{
     
