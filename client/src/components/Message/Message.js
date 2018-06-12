@@ -21,6 +21,7 @@ import "./Message.css"
                 <p>{props.message.message}</p>
               </div>
             </div>
+            <br/>
           </div>
           }
 
