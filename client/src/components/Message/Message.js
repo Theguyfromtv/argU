@@ -15,8 +15,8 @@ import "./Message.css"
           </div>
           :
           <div>
-            <h6>{props.message.side?"Pro":"Con"}</h6>
-            <div className={"card message"}>
+            <p>{props.message.side?"Pro":"Con"}</p>
+            <div className="card message" style={{float:"left"}}>
               <div className="card-body">
                 <p>{props.message.message}</p>
               </div>
