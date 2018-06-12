@@ -6,7 +6,7 @@ import API from '../../utils/API'
  class Topics extends Component{
   state={
     topic1Val:true,
-    topic2Val:false,
+    topic2Val:true,
     topic3Val:true,
     user:{}
 
@@ -62,7 +62,7 @@ import API from '../../utils/API'
  render(){
   return (
     <div>
-      <p>Give us your opinions</p>
+      <p>Give us your opinions(these are reset every time so you can argu either side!)</p>
  
       <div className="card">
         <label htmlFor={this.props.topics[0].name}>
