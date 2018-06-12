@@ -1,9 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Chat.css'
-import Drawer from '../Drawer/Drawer'
 import Message from '../Message/Message'
-import API from '../../utils/API'
-import io from 'socket.io-client'
 
 const Chat=()=> {
 
