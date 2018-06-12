@@ -5,28 +5,9 @@ import Message from '../Message/Message'
 import API from '../../utils/API'
 import io from 'socket.io-client'
 
-class Chat extends Component {
-   state={
-     inputtedMessage:"",
-   }
-   sendMessage=(cid,message,uid,side)=>{
-    if(message){
-      API.sendMessage(cid,message,uid,side).then()
-      let newMessage={chatId:cid, message:message,senderId:uid,side:side}
-      this.socket.emit('message',newMessage)
-    }else{
-
-    }
-
-   }
-
-  
-   componentDidMount=()=>{
-
-  }
+const Chat=()=> {
 
 
-  render() {
     return (
     <div className="col-sm-8 chat">
       <div className="overflow">
@@ -60,7 +41,7 @@ class Chat extends Component {
       </div>
     )
   }
-}
+
 
 
 export default Chat
