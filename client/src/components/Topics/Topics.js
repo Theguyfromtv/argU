@@ -11,13 +11,7 @@ import API from '../../utils/API'
     user:{}
 
   }
-  getUser=()=>{
-    this.setState({user:this.props.user})
-    
-  }
-  getTopics=(id)=>{
 
-  }
   
   handleChange1=()=>{
     this.setState({ topic1Val:!this.state.topic1Val })
@@ -60,14 +54,13 @@ import API from '../../utils/API'
  render(){
   return (
     <div>
-      <h4>Give us your opinions</h4>
+      <p>Give us your opinions</p>
  
       <div className="card">
         <label htmlFor={this.props.topics[0].name}>
         <span>{this.props.topics[0].name}</span>
         <Switch
           onChange={this.handleChange1}
-          checked={this.state.topic1Val}
           offColor="#eb3c24"
           onColor="#3385f7"
         />
@@ -80,7 +73,6 @@ import API from '../../utils/API'
         <span>{this.props.topics[1].name}</span>
         <Switch
           onChange={this.handleChange2}
-          checked={this.state.topic2Val}
           offColor="#eb3c24"
           onColor="#3385f7"
         />
@@ -93,7 +85,6 @@ import API from '../../utils/API'
         <span>{this.props.topics[2].name}</span>
         <Switch
           onChange={this.handleChange3}
-          checked={this.state.topic3Val}
           offColor="#eb3c24"
           onColor="#3385f7"
         />
