@@ -28,7 +28,7 @@ userController.updateTopics=(req,res)=>{
   console.log(newTopic)
   let newSide=req.body.side
  let topic={topic:newTopic,side:newSide}
- User.findOneAndUpdate({_id:req.body.id}, {$push:{topics:topic}},function(err,user1){
+ User.findOneAndUpdate({_id:req.body.id}, {$addToSet:{topics:topic}},function(err,user1){
    if (err) throw err
    else{
      console.log(user1)
@@ -61,9 +61,9 @@ userController.updateTopics=(req,res)=>{
  
              socket.emit('match', chat)
                
-             User.findOneAndUpdate({_id:user1._id},{$push:{chats:chatId}},function(err,user){
+             User.findOneAndUpdate({_id:user1._id},{$addToSet:{chats:chatId}},function(err,user){
                if (err) throw err
-               User.findOneAndUpdate({_id:user2._id},{$push:{chats:chatId}},function(err,user){
+               User.findOneAndUpdate({_id:user2._id},{$addToSet:{chats:chatId}},function(err,user){
                  if (err) throw err            
                  res.json(chat)
                })
