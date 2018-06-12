@@ -69,12 +69,11 @@ class Arguments extends Component {
   }
   sendMessage=(cid,message,uid,side)=>{
       let newMessage={chatId:cid, message:message,senderId:uid,side:side}
-      this.socket.emit('message',newMessage, (newMessage)=>{
-        console.log(newMessage)
-      })
+      this.socket.emit('message',newMessage)
+      }
 
 
-   }
+   
   
   
 
@@ -95,6 +94,8 @@ class Arguments extends Component {
         const newMessage=message.message
         this.setState({messages:[...newMessage]})
         console.log(message)      
+    }else{
+      console.log("not for us")
     }
    })
 
