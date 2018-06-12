@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Switch from "react-switch";
 import API from '../../utils/API'
-import { Merge } from 'animate-components';
-import { slideDown, slideUp } from 'animate-keyframes';
+import {SlideDown} from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
 
 
@@ -65,9 +64,7 @@ import 'react-slidedown/lib/slidedown.css'
   
  render(){
   return (
-<Merge
-  one={{ name: slideDown, duration: '2s', timingFunction: 'ease-in' }}
-  as="div">
+    <SlideDown>
     <div className="card topics">
       <div className="card-body">
       <div className="row">
@@ -137,8 +134,7 @@ import 'react-slidedown/lib/slidedown.css'
       <hr/>
     </div>
   </div>
-</Merge>
-
+  </SlideDown>
       
       )
   
