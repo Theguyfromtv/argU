@@ -39,10 +39,10 @@ class Chat extends Component {
         if(findChat){
           this.setState({currentChat:findChat})
           this.setState({messages:findChat.messages})
-          if(this.state.chat.participant1id===this.state.user._id){
+          if(this.state.currentChat.participant1id===this.state.user._id){
           this.setState({side:true})
           this.setState({className:"pro"})
-          }else if(this.state.chat.participant2id===this.state.user._id){
+          }else if(this.state.currentChat.participant2id===this.state.user._id){
           this.setState({side:false})
           this.setState({className:"#con"})
           }else{
