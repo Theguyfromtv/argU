@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Switch from "react-switch";
 import API from '../../utils/API'
-import {SlideDown} from 'react-slidedown'
+import { SlideUp } from 'animate-components';
+import { SlideDown } from 'animate-components';
 import 'react-slidedown/lib/slidedown.css'
 
 
@@ -65,6 +66,7 @@ import 'react-slidedown/lib/slidedown.css'
  render(){
   return (
     <SlideDown>
+    <SlideUp>
     <div className="card topics">
       <div className="card-body">
       <div className="row">
@@ -134,6 +136,7 @@ import 'react-slidedown/lib/slidedown.css'
       <hr/>
     </div>
   </div>
+  </SlideUp>
   </SlideDown>
       
       )
