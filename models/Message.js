@@ -9,7 +9,7 @@ var Schema = mongoose.Schema;
 // Create the messageSchema with the schema object
 var messageSchema = new Schema({
   // each message has a chat it's in
-  chat: {
+  message: {
     type: String,
     required: true
   },

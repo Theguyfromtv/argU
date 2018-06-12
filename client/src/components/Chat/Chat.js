@@ -19,7 +19,7 @@ class Chat extends Component {
     if(message){
       API.sendMessage(cid,message,uid,side).then()
       let newMessage={chatId:cid, message:message,senderId:uid,side:side}
-      io.emit('message',newMessage)
+      this.socket.emit('message',newMessage)
     }else{
 
     }
@@ -73,7 +73,9 @@ class Chat extends Component {
     <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
-
+            <div className="chatBar">
+              <h3>{this.state.currentChat.topic}</h3>
+            </div>
             <div className="messageView">
 
             {this.state.messages.map((message,index)=>{
