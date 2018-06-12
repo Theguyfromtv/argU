@@ -70,7 +70,9 @@ class Arguments extends Component {
   sendMessage=(cid,message,uid,side)=>{
       API.sendMessage(cid,message,uid,side).then()
       let newMessage={chatId:cid, message:message,senderId:uid,side:side}
-      this.socket.emit('message',newMessage)
+      this.socket.emit('message',newMessage, (newMessage)=>{
+        console.log(newMessage)
+      })
 
 
    }
