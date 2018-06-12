@@ -65,14 +65,18 @@ class Arguments extends Component {
     
   handleChange=(event)=>{
     this.setState({newMessage: event.target.value});
-  }  
+  }
+  sendMessage=(cid,message,uid,side)=>{
+      API.sendMessage(cid,message,uid,side).then()
+      let newMessage={chatId:cid, message:message,senderId:uid,side:side}
+      this.socket.emit('message',newMessage)
+
+
+   }
+  
   
 
-  loadCurrentChat=()=>{
-        
-         
-       
-    }
+
 
 
   toggleHidden(){
@@ -115,7 +119,8 @@ class Arguments extends Component {
                     side={this.state.side}
                     className={this.state.className}
                     messages={this.state.messages}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    onClick={this.sendMessage}/>
                 </div>
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
@@ -132,7 +137,8 @@ class Arguments extends Component {
                 side={this.state.side}
                 className={this.state.className}
                 messages={this.state.messages}
-                onChange={this.handleChange}/>}
+                onChange={this.handleChange}
+                onClick={this.sendMessage}/>}
 
                 
             </MediaQuery>
