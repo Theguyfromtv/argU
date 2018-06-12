@@ -14,7 +14,6 @@ const Chat=(props)=> (
             <div className="messageView">
 
             {props.messages.map(message=>{
-              return 
               <Message 
                 message={message}
                 side={props.side}
