@@ -5,7 +5,7 @@ import "./Message.css"
     return (
       <div className="message">
           {props.message.sender===props.user._id?
-          <div>
+          <div style={{float:"left"}}>
             <p>{props.message.side?"Pro":"Con"}</p>
             <div className={"card "+props.className} >
               <div className="card-body">
@@ -14,9 +14,9 @@ import "./Message.css"
             </div>
           </div>
           :
-          <div>
+          <div style={{float:"left"}}>
             <p>{props.message.side?"Pro":"Con"}</p>
-            <div className="card message" style={{float:"left"}}>
+            <div className="card message" >
               <div className="card-body">
                 <p>{props.message.message}</p>
               </div>
