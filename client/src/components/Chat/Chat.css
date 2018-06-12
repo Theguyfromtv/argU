@@ -16,6 +16,7 @@
     overflow-x: none;
     border-radius:0px 0px 0px 0px;
     margin-bottom: 50px;
+    flex-direction : column
 }
 
 #chatView::-webkit-scrollbar { 
