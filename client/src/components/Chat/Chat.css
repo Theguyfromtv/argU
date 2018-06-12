@@ -94,3 +94,11 @@ input { overflow: expand; }
 .chat {
     padding: 0;
 }
+
+.pro{
+    background-color: #3385f7;
+}
+
+.con{
+    background-color: #eb3c24;
+}

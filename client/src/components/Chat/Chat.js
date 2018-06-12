@@ -14,7 +14,7 @@ class Chat extends Component {
      side:false,
      user:{},
      inputtedMessage:"",
-     color:""
+     className:""
    }
    sendMessage=(cid,message,uid,side)=>{
     if(message){
@@ -41,10 +41,10 @@ class Chat extends Component {
           this.setState({messages:findChat.messages})
           if(this.state.chat.participant1id===this.state.user._id){
           this.setState({side:true})
-          this.setState({color:"#3385f7"})
+          this.setState({className:"pro"})
           }else if(this.state.chat.participant2id===this.state.user._id){
           this.setState({side:false})
-          this.setState({color:"#eb3c24"})
+          this.setState({className:"#con"})
           }else{
           return "pick an argument to see messages"
         }
@@ -97,7 +97,7 @@ class Chat extends Component {
                   <textarea class="text-box form-control"placeholder={this.state.currentStage}/>
                 </div>
                   <div className="col-sm-2 bottom2">
-                  <button type="submit" className="submit btn btn-primary" style={{backgroundColor: this.state.color}} onClick={this.sendMessage}><i className="zmdi zmdi-mail-send"></i></button>  
+                  <button type="submit" className={"submit btn btn-primary "+this.state.className}  onClick={this.sendMessage}><i className="zmdi zmdi-mail-send"></i></button>  
                   </div>
               </div>
           </div>
