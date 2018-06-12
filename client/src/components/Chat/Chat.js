@@ -17,7 +17,8 @@ const Chat=(props)=> (
               <Message 
                 message={message}
                 side={props.side}
-                className={props.className}/>
+                className={props.className}
+                user={props.user}/>
                 ))}
             </div>
             <div className=" input">
