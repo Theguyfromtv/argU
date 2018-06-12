@@ -1,6 +1,7 @@
 #chatView{
     height: 100vh;
     position: relative;
+    z-index: 50;
 
 }
 .messageView{
@@ -36,6 +37,7 @@
     width: 100%;
     display: block;
     margin-bottom: 1px;
+    z-index: 100;
 }
 
 .actions{
