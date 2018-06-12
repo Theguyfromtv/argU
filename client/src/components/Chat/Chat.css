@@ -48,11 +48,13 @@
 .actions{
     height: 50px;
 }
-
+.container-fluid{
+    padding: 0;
+}
 .input{
     position: fixed;
     bottom: 0;
-    width: 100%
+    width: 500px
 }
 
 .form-control{
