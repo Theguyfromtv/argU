@@ -52,19 +52,22 @@ class Chat extends Component {
       let newCurrentChat=currentChatArr.split('=')
       newCurrentChat=newCurrentChat[1]
       console.log(newCurrentChat)
-      const findChat = this.state.chats.find( chat => chat._id === newCurrentChat );
-      console.log(this.props.chats)
-      this.setState({currentChat:findChat})
-      this.setState({messages:findChat.messages})
-      if(this.state.chat.participant1id===this.state.user._id){
+      if(this.state.chats){
+        const findChat = this.state.chats.find( chat => chat._id === newCurrentChat );
+        console.log(this.props.chats)
+        this.setState({currentChat:findChat})
+        this.setState({messages:findChat.messages})
+        if(this.state.chat.participant1id===this.state.user._id){
         this.setState({side:true})
         this.setState({color:"#3385f7"})
-      }else if(this.state.chat.participant2id===this.state.user._id){
+        }else if(this.state.chat.participant2id===this.state.user._id){
         this.setState({side:false})
         this.setState({color:"#eb3c24"})
-      }else{
+        }else{
         return "pick an argument to see messages"
       }
+      }
+      
    
     }
 
@@ -84,9 +87,6 @@ class Chat extends Component {
         console.log(message)      
     }
    })
-  }
-   componentWillUnmount() {
-    this.socket.close();
   }
 
 
