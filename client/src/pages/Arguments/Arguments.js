@@ -89,7 +89,7 @@ class Arguments extends Component {
   componentDidMount(){
     this.loadUser()
     
-    this.socket = io()
+    this.socket = io("https://argu-chat.herokuapp.com/")
 
     this.socket.on('message', (message)=>{
       if(message.chatid===this.state.currentChat._id){
