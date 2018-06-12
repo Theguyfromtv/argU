@@ -65,7 +65,7 @@ import 'react-slidedown/lib/slidedown.css'
   
  render(){
   return (
-    <SlideDown>
+    <SlideDown duration='4s' timingFunction='ease-in' as='div'>
     <SlideUp>
     <div className="card topics">
       <div className="card-body">
