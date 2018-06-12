@@ -11,7 +11,7 @@ const Chat=(props)=> (
             <div className="chatBar">
               <h3>Argument about:{props.currentChat.topic}</h3>
             </div>
-            <div className="messageView">
+            <div className="messageView container-fluid">
 
             {props.messages.map(message=>(
               <Message 
