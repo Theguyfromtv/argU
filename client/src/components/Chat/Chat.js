@@ -55,11 +55,11 @@ class Chat extends Component {
      this.getChat()
     this.socket = io()
 
-    this.socket.on('message', (chat)=>{
-      if(chat._id===this.state.currentChat){
-        const newMessages=chat.messages
-        this.setState({messages:newMessages})
-        console.log(chat)      
+    this.socket.on('message', (message)=>{
+      if(message.chatid===this.state.currentChat._id){
+        const newMessage=message.message
+        this.setState({messages:[...newMessage]})
+        console.log(message)      
     }
    })
   }

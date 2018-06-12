@@ -62,13 +62,12 @@ io = socket(server);
 //creating socket connetction
 io.on('connection', (socket) => {
     console.log("socket id is:"+ socket.id);
-
+    socket.on('message', (message)=>{
+      io.sockets.emit('message', message)
+    })
 });
 
-io.on('match', (chat)=>{
-  io.emit('match', chat)
-  console.log("match!")
-})
+
 
 process.on('unhandledRejection', (reason, p) => {
   console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
