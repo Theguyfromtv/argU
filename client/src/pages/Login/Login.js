@@ -9,9 +9,6 @@ const LoginPage=() => {
     <div>
       <div className="container section">
         <div className="row ">
-        <div className="col-lg-4 col-sm-0">
-        </div>
-          <div className="col-lg-4 col-sm-12 col-md-6">
             <Logo/>
             <div className="card">
               <div className="card-body">
@@ -23,11 +20,9 @@ const LoginPage=() => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-sm-0">
-        </div>
         </div>
       </div>
-    </div>
+
   )
 }
 
