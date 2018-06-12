@@ -6,7 +6,7 @@ import "./Message.css"
       <div className="message">
           {props.message.sender===props.user._id?
           <div>
-            <h6>{props.message.side?"Pro":"Con"}</h6>
+            <p>{props.message.side?"Pro":"Con"}</p>
             <div className={props.className} >
               <div className>
                 <p>{props.message.message}</p>
