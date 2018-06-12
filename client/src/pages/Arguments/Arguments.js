@@ -22,6 +22,7 @@ class Arguments extends Component {
     userId=userFinalId[0]
     console.log(userId)
     API.getUser(userId).then((res)=>{
+        console.log(res)
         this.setState({user:res.data})
         console.log(this.state.user)
         API.getChats(this.state.user._id).then(res=>{
