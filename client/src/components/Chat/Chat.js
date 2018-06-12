@@ -79,7 +79,7 @@ class Chat extends Component {
       <div className="overflow">
           <div id="chatView">
             <div className="chatBar">
-              <h3>{this.state.currentChat.topic}</h3>
+              <h3>{this.state.currentChat.topic?this.state.currentChat.topic:"Chat"}</h3>
             </div>
             <div className="messageView">
 
