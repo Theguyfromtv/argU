@@ -12,7 +12,10 @@ class Arguments extends Component {
         user:{},
         chats:[],
         isHidden:true,
-        currentChat:"",
+        currentChat:{},
+        messages:[],
+        side:false,
+        className:""
         
     }
   loadUser=()=>{
@@ -34,16 +37,38 @@ class Arguments extends Component {
   }
 
   loadCurrentChat=()=>{
-      let currentChatArr=window.location.href.split('&')
-      if(currentChatArr[1]){      
-        currentChatArr=currentChatArr[1]
-        let newCurrentChat=currentChatArr.split('=')
-        newCurrentChat=newCurrentChat[1]
-        this.setState({currentChat:newCurrentChat})
-        console.log(newCurrentChat)
+        if(window.location.hash===""){
+          let currentChatArr=window.location.href.split('&')
+          currentChatArr=currentChatArr[1]
+          let newCurrentChat=currentChatArr.split('=')
+          newCurrentChat=newCurrentChat[1]
+          console.log(newCurrentChat)
+          if(this.state.chats){
+            const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
+            if(findChat){
+              this.setState({currentChat:findChat})
+              this.setState({messages:findChat.messages})
+              if(this.state.currentChat.participant1id===this.state.user._id){
+              this.setState({side:true})
+              this.setState({className:"pro"})
+              }else if(this.state.currentChat.participant2id===this.state.user._id){
+              this.setState({side:false})
+              this.setState({className:"con"})
+              }else{
+              return "pick an argument to see messages"
+            }
+    
+          }
+          }
+          
+       
+        }
+    
+         
+       
     }
 
-  }
+
   toggleHidden(){
     this.setState({isHidden: !this.state.isHidden})
   
@@ -54,15 +79,13 @@ class Arguments extends Component {
     
     this.socket = io()
 
-    this.socket.on('message' ,chat=>{
-        
-    })
-    this.socket = io('https://argu-chat.herokuapp.com/')
-
-    this.socket.on("match", (chat)=>{
-        console.log("new match!")
-        this.setState({chats:[...chat]})
-    })
+    this.socket.on('message', (message)=>{
+      if(message.chatid===this.state.currentChat._id){
+        const newMessage=message.message
+        this.setState({messages:[...newMessage]})
+        console.log(message)      
+    }
+   })
 
 }
     
@@ -81,8 +104,11 @@ class Arguments extends Component {
 
                     <Chat
                     chats={this.state.chats}
-                    current={this.state.currentChat}
-                    user={this.state.user}/>
+                    currentChat={this.state.currentChat}
+                    user={this.state.user}
+                    side={this.state.side}
+                    className={this.state.className}
+                    messages={this.state.messages}/>
                 </div>
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
