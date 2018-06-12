@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Switch from "react-switch";
 import API from '../../utils/API'
+import {SlideDown} from 'react-slidedown'
+import 'react-slidedown/lib/slidedown.css'
+
 
 
  class Topics extends Component{
@@ -61,7 +64,9 @@ import API from '../../utils/API'
   
  render(){
   return (
+    <SlideDown>
     <div className="card topics">
+      <div className="card-body">
       <div className="row">
         <div className="col-12">
           <p>Give us your opinions<br/>(these are reset every time so you can argu either side!)</p>
@@ -128,6 +133,9 @@ import API from '../../utils/API'
       </div>
       <hr/>
     </div>
+  </div>
+  </SlideDown>
+      
       )
   
  } 
