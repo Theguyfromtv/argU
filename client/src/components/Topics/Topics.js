@@ -61,36 +61,54 @@ import API from '../../utils/API'
   
  render(){
   return (
-    <div>
-      <p>Give us your opinions(these are reset every time so you can argu either side!)</p>
- 
-      <div className="card">
-        <label htmlFor={this.props.topics[0].name}>
-        <span>{this.props.topics[0].name}</span>
-        <Switch
+    <div className="card topics">
+      <div className="row">
+        <div className="col-12">
+          <p>Give us your opinions(these are reset every time so you can argu either side!)</p>
+        </div>
+      </div>
+    
+      <div className="row">
+        <div className="col-4">
+          <span>{this.props.topics[0].name}</span>
+        </div>
+        <div className="col-4">
+          <label htmlFor={this.props.topics[0].name}>
+          <Switch
           onChange={this.handleChange1}
           checked={this.state.topic1Val}
           offColor="#eb3c24"
           onColor="#3385f7"
-        />
-      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>argu!</button>
-
-      </label>
+          />
+          </label>
+        </div>
+        <div className="col-4">
+          <button className="btn btn-lg btn-primary btn-topics"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>argu!</button>
+        </div>
       </div>
-      <div className="card">
-        <label htmlFor={this.props.topics[1].name}>
-        <span>{this.props.topics[1].name}</span>
-        <Switch
-          onChange={this.handleChange2}
-          checked={this.state.topic2Val}
-          offColor="#eb3c24"
-          onColor="#3385f7"
-        />
-      <button className="btn btn-lg btn-primary btn-sidebar" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>argu!</button>
-
-      </label>
+      <div className="row">
+        <div className="col-4">
+          <span>{this.props.topics[1].name}</span>
+        </div>
+        <div className="col-4">
+          <label htmlFor={this.props.topics[1].name}>
+          <Switch
+            onChange={this.handleChange2}
+            checked={this.state.topic2Val}
+            offColor="#eb3c24"
+            onColor="#3385f7"
+          />
+          </label>
+        </div>
+        <div className="col-4">
+          <button className="btn btn-lg btn-primary btn-topics" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>argu!</button>
+        </div>
       </div>
-      <div className="card">
+      <div className="row">
+        <div className="col-4">
+          <span>{this.props.topics[1].name}</span>
+        </div>
+        <div className="col-4">
         <label htmlFor={this.props.topics[2].name}>
         <span>{this.props.topics[2].name}</span>
         <Switch
@@ -99,9 +117,11 @@ import API from '../../utils/API'
           offColor="#eb3c24"
           onColor="#3385f7"
         />
-      <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>argu!</button>
-
-      </label>
+          </label>
+        </div>
+        <div className="col-4">
+        <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>argu!</button>
+        </div>
       </div>
     </div>
       )
