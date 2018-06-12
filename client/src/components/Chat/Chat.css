@@ -108,10 +108,18 @@ input { overflow: hidden }
     background-color: #3385f7;
 }
 
+.pro:active{
+    background-color: #3385f7;
+}
+
 .con{
     background-color: #eb3c24;
 }
 
 .con:hover{
+    background-color: #eb3c24;
+}
+
+.con:active{
     background-color: #eb3c24;
 }
