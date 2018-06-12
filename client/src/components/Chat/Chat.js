@@ -10,7 +10,7 @@ class Chat extends Component {
      chats:[],
      currentChat:{},
      messages:[],
-     currentMessage:{},
+     currentMessage:"",
      side:false,
      user:{},
      inputtedMessage:"",
@@ -73,6 +73,7 @@ class Chat extends Component {
 
   
    componentDidMount=()=>{
+     this.loadUser()
      this.getChat()
     this.socket = io()
 
