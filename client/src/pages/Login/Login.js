@@ -11,7 +11,7 @@ const LoginPage=() => {
         <div className="row ">
         <div className="col-lg-4 col-sm-0">
         </div>
-          <div className="col-4 col-sm-12 col-md-6">
+          <div className="col-lg-4 col-sm-12 col-md-6">
             <Logo/>
             <div className="card">
               <div className="card-body">
