@@ -33,6 +33,7 @@ class Chat extends Component {
       newCurrentChat=newCurrentChat[1]
       console.log(newCurrentChat)
       const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
+      console.log(findChat)
       this.setState({currentChat:findChat})
       this.setState({messages:findChat.messages})
       if(this.state.chat.participant1id===this.state.user._id){
