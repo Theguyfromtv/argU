@@ -12,12 +12,12 @@ class Chat extends Component {
      currentMessage:{},
      side:false,
      user:{},
-     inputtedMessage:{},
+     inputtedMessage:"",
      color:""
    }
-   sendMessage=(id,message)=>{
+   sendMessage=(cid,message,uid)=>{
 
-      API.sendMessage(id,message).then()
+      API.sendMessage(cid,message,uid).then()
    }
    getChat=()=>{
     
@@ -29,12 +29,19 @@ class Chat extends Component {
         const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
         this.setState({currentChat:findChat})
         this.setState({messages:findChat.messages})
+        if(this.state.chat.participant1id===this.state.user._id){
+          this.setState({side:true})
+          this.setState({color:"#3385f7"})
+        }else if(this.state.chat.participant2id===this.state.user._id){
+          this.setState({side:false})
+          this.setState({color:"#eb3c24"})
+        }
      
    }
 
   
    componentDidMount=()=>{
-     console.log()
+     this.getChat()
     this.socket = io()
 
     this.socket.on('message', (chat)=>{
@@ -61,7 +68,9 @@ class Chat extends Component {
             {this.state.messages.map((message,index)=>{
         
               <Message key={index}
-                message={message}/>
+                message={message}
+                side={this.state.side}
+                color={this.state.color}/>
                 })}
             </div>
             <div className=" input">
@@ -70,7 +79,7 @@ class Chat extends Component {
                   <textarea class="text-box form-control"placeholder={this.state.currentStage}/>
                 </div>
                   <div className="col-sm-2 bottom2">
-                  <button type="submit" className="submit btn btn-primary" onClick={this.sendMessage}><i className="zmdi zmdi-mail-send"></i></button>  
+                  <button type="submit" className="submit btn btn-primary" style={{backgroundColor: this.state.color}} onClick={this.sendMessage}><i className="zmdi zmdi-mail-send"></i></button>  
                   </div>
               </div>
           </div>

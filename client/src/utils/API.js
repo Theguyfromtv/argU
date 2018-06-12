@@ -12,12 +12,11 @@ const API= {
     getChats: (uid)=>{
       return axios.get("/chats/all/"+uid)
     },
-    sendMessage: (cid, message, type, sender)=>{
+    sendMessage: (cid, message, uid)=>{
         return axios.post('/chats/ ',{
           id:cid,
           message:message,
-          type:type,
-          sender:sender
+          sender:uid
         })
 
     },
