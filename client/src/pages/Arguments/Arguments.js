@@ -90,7 +90,7 @@ class Arguments extends Component {
     this.socket = io("https://argu-chat.herokuapp.com/")
 
     this.socket.on('message', (message)=>{
-      if(message.chatid===this.state.currentChat._id){
+      if(message.chatId===this.state.currentChat._id){
         const newMessage=message.message
         this.setState({messages:[...newMessage]})
         console.log(message)      
