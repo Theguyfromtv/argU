@@ -9,16 +9,16 @@ const Chat=(props)=> {
       <div className="overflow">
           <div id="chatView">
             <div className="chatBar">
-              <h3>{this.props.currentChat.topic}</h3>
+              <h3>{props.currentChat.topic}</h3>
             </div>
             <div className="messageView">
 
-            {this.props.messages.map((message,index)=>{
+            {props.messages.map((message,index)=>{
         
               <Message key={index}
                 message={message}
-                side={this.props.side}
-                className={this.props.className}/>
+                side={props.side}
+                className={props.className}/>
                 })}
             </div>
             <div className=" input">
@@ -27,7 +27,7 @@ const Chat=(props)=> {
                   <textarea class="text-box form-control"/>
                 </div>
                   <div className="col-sm-2 bottom2">
-                  <button type="submit" className={"submit btn btn-primary "+this.props.className} ><i className="zmdi zmdi-mail-send"></i></button>  
+                  <button type="submit" className={"submit btn btn-primary "+props.className} ><i className="zmdi zmdi-mail-send"></i></button>  
                   </div>
               </div>
           </div>
