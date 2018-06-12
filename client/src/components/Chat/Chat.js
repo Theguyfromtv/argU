@@ -9,7 +9,7 @@ const Chat=(props)=> (
       <div className="overflow">
           <div id="chatView">
             <div className="chatBar">
-              <h3>"Argument about: "{props.currentChat.topic}</h3>
+              <h3>Argument about: {props.currentChat.topic}</h3>
             </div>
             <div className="messageView">
 
