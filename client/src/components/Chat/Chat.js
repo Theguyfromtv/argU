@@ -6,7 +6,7 @@ const Chat=(props)=> (
 
 
     <div className="col-sm-8 chat">
-      <div className="overflow container">
+      <div>
           <div id="chatView">
             <div className="chatBar">
               <h3>Argument about:{props.currentChat.topic}</h3>
