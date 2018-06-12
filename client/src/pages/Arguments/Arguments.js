@@ -85,7 +85,6 @@ class Arguments extends Component {
   }
   componentDidMount(){
     this.loadUser()
-    this.loadCurrentChat()
     
     this.socket = io()
 
