@@ -1,6 +1,6 @@
 #chatView{
     width: 100%;
-    background-color: gray;
+    background-color: white;
     display: flex;
     overflow-y: scroll;
     border-radius:0px 0px 0px 0px;
@@ -10,7 +10,7 @@
 .messageView{
     width: 100%;
     max-width: 100%;
-    background-color: gray;
+    background-color: white;
     display: flex;
     overflow-y: scroll;
     overflow-x: none;
@@ -27,13 +27,16 @@
 }
 
 
-.row{
-}
 
 .overflow{
-   height: 100vh;
    position: relative;
 
+}
+
+.chatBar{
+    position: fixed;
+    top: 0;
+    width: 100%
 }
 
 .actions{
