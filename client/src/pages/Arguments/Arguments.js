@@ -25,7 +25,7 @@ class Arguments extends Component {
         console.log(res.data)
         this.setState({user:res.data})
         console.log(this.state.user)
-        API.getChats(this.state.user._id).then(res=>{
+        API.getChats(userId).then(res=>{
             this.setState({chats:res.data.chats})
             console.log(res)
             console.log(this.state.chats)
