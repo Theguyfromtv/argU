@@ -91,7 +91,7 @@ class Arguments extends Component {
 
     this.socket.on('message', (message)=>{
       if(message.chatId===this.state.currentChat._id){
-        const newMessage=message.message
+        const newMessage=message
         this.setState({messages:[...this.state.messages,...newMessage]})
         console.log(message)      
     }else{
