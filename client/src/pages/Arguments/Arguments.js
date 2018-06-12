@@ -68,6 +68,9 @@ class Arguments extends Component {
     this.setState({newMessage: event.target.value});
   }
   sendMessage=(cid,message,uid,side)=>{
+    API.sendMessage(cid,message,uid,side).then((res)=>{
+      console.log(res)
+    })
       let newMessage={chatId:cid, message:message,sender:uid,side:side}
       this.socket.emit('message',newMessage)
       this.setState({newMessage:""})
