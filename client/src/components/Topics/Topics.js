@@ -114,11 +114,10 @@ import 'react-slidedown/lib/slidedown.css'
       <hr/>
       <div className="row">
         <div className="col-4">
-          <span>{this.props.topics[1].name}</span>
+          <span>{this.props.topics[2].name}</span>
         </div>
         <div className="col-4">
         <label htmlFor={this.props.topics[2].name}>
-        <span>{this.props.topics[2].name}</span>
         <Switch
           onChange={this.handleChange3}
           checked={this.state.topic3Val}
