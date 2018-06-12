@@ -54,7 +54,7 @@
 .input{
     position: fixed;
     bottom: 0;
-    width: 500px
+    width: 100%
 }
 
 .form-control{
