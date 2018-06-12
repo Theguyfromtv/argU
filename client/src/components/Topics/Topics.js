@@ -36,14 +36,23 @@ import API from '../../utils/API'
   }
   getOpinions=()=>{
         let topic1 = this.props.user.topics.find( topic => topic.name === this.props.topics[0].name );
-        console.log(topic1)
-        this.setState({topic1Val:topic1.side})
+        if(topic1){
+          console.log(topic1)
+          this.setState({topic1Val:topic1.side})
+        }
+
         let topic2 = this.props.user.topics.find( topic => topic.name === this.props.topics[1].name );
-        console.log(topic2)
-        this.setState({topic2Val:topic2.side})
+        if(topic2){
+          console.log(topic2)
+          this.setState({topic2Val:topic2.side})
+        }
+
         let topic3 = this.props.user.topics.find( topic => topic.name === this.props.topics[2].name );
-        console.log(topic3)
-        this.setState({topic3Val:topic3.side})
+        if(topic3){
+          console.log(topic3)
+          this.setState({topic3Val:topic3.side})
+        }
+
   }
   componentDidMount(){
     this.getOpinions()
