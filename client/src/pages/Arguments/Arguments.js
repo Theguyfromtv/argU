@@ -89,7 +89,7 @@ class Arguments extends Component {
                 </div>
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
-            <div className="row">
+           
             <button className="btn btn-lg btn-primary btn-sidebar" onClick={this.toggleHidden.bind(this)}>Sidebar</button>
                 {!this.state.isHidden && <ArgumentList 
                 chats={this.state.chats}
@@ -97,7 +97,7 @@ class Arguments extends Component {
                 />}
                 {this.state.isHidden && <Chat
                 chat={this.state.currentChat}/>}
-            </div>
+
                 
             </MediaQuery>
           </div>
