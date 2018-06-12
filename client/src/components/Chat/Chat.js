@@ -24,7 +24,6 @@ const Chat=(props)=> (
             </div>
             <button type="submit" className={"submit btn btn-primary "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
             </form>
-                  <textarea class="text-box form-control" />
       </div>
 
 )
