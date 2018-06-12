@@ -4,7 +4,7 @@ import "./Message.css"
  const Message=(props)=> {
     return (
       <div className="message">
-        <div className="row">
+        <div>
           <h6>{props.message.side?"Pro":"Con"}</h6>
           <div className="card message" style={{backgroundColor: props.color}}>
             <div className="card-body">
