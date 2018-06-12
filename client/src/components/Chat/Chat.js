@@ -16,35 +16,44 @@ class Chat extends Component {
      color:""
    }
    sendMessage=(cid,message,uid,side)=>{
-
+    if(message){
       API.sendMessage(cid,message,uid,side).then()
       let newMessage={chatId:cid, message:message,senderId:uid,side:side}
       io.emit('message',newMessage)
+    }else{
+
+    }
+
    }
    getChat=()=>{
-    
+    if(window.location.hash===""){
       let currentChatArr=window.location.href.split('&')
-        currentChatArr=currentChatArr[1]
-        let newCurrentChat=currentChatArr.split('=')
-        newCurrentChat=newCurrentChat[1]
-        console.log(newCurrentChat)
-        const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
-        this.setState({currentChat:findChat})
-        this.setState({messages:findChat.messages})
-        if(this.state.chat.participant1id===this.state.user._id){
-          this.setState({side:true})
-          this.setState({color:"#3385f7"})
-        }else if(this.state.chat.participant2id===this.state.user._id){
-          this.setState({side:false})
-          this.setState({color:"#eb3c24"})
-        }
+      currentChatArr=currentChatArr[1]
+      let newCurrentChat=currentChatArr.split('=')
+      newCurrentChat=newCurrentChat[1]
+      console.log(newCurrentChat)
+      const findChat = this.props.chats.find( chat => chat._id === newCurrentChat );
+      this.setState({currentChat:findChat})
+      this.setState({messages:findChat.messages})
+      if(this.state.chat.participant1id===this.state.user._id){
+        this.setState({side:true})
+        this.setState({color:"#3385f7"})
+      }else if(this.state.chat.participant2id===this.state.user._id){
+        this.setState({side:false})
+        this.setState({color:"#eb3c24"})
+      }else{
+        return "pick an argument to see messages"
+      }
+   
+    }
+
      
    }
 
   
    componentDidMount=()=>{
      this.getChat()
-    this.socket = io('')
+    this.socket = io()
 
     this.socket.on('message', (chat)=>{
       if(chat._id===this.state.currentChat){
