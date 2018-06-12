@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
+import "./Message.css"
 
  const Message=(props)=> {
     return (
-      <div>
+      <div className="message">
         <h6>{props.message.side?"Pro":"Con"}</h6>
         <div className="card message" style={{backgroundColor: props.color}}>
           <div className="card-body">
