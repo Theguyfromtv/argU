@@ -6,9 +6,9 @@ const Chat=(props)=> (
 
 
     <div className="col-sm-8 chat">
-            <div className="chatBar">
-              <h4>Argument about:{props.currentChat.topic}</h4>
-            </div>
+            <nav class="navbar fixed-top navbar-light bg-light">
+                <p class="navbar-brand">Argument about:{props.currentChat.topic}</p>
+              </nav>
 
             {props.messages.map(message=>(
               <Message 
