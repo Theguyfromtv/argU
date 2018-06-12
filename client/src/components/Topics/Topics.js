@@ -6,7 +6,7 @@ import API from '../../utils/API'
  class Topics extends Component{
   state={
     topic1Val:true,
-    topic2Val:true,
+    topic2Val:false,
     topic3Val:true,
     user:{}
 

@@ -70,6 +70,7 @@ class Arguments extends Component {
   sendMessage=(cid,message,uid,side)=>{
       let newMessage={chatId:cid, message:message,sender:uid,side:side}
       this.socket.emit('message',newMessage)
+      this.setState({newMessage:""})
       }
 
 
