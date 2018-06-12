@@ -3,13 +3,13 @@ import './Chat.css'
 import Message from '../Message/Message'
 
 const Chat=(props)=> (
-<div>
-  <h3>Argument about: {props.currentChat.topic}</h3>
+
 
     <div className="col-sm-8 chat">
       <div className="overflow">
           <div id="chatView">
             <div className="chatBar">
+              <h3>Argument about:{props.currentChat.topic}</h3>
             </div>
             <div className="messageView">
 
@@ -35,7 +35,7 @@ const Chat=(props)=> (
 
         </div>
       </div>
-</div>
+
 )
 
 

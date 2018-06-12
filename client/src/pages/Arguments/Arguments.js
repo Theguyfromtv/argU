@@ -47,6 +47,7 @@ class Arguments extends Component {
             const findChat = this.state.chats.find( chat => chat._id === newCurrentChat );
             if(findChat){
               this.setState({currentChat:findChat})
+              console.log(this.state.currentChat)
               this.setState({messages:findChat.messages})
               if(this.state.currentChat.participant1id===this.state.user._id){
               this.setState({side:true})
