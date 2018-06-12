@@ -37,10 +37,13 @@ import API from '../../utils/API'
   getOpinions=()=>{
     for (let i =0 ; i<this.props.user.topics; i++){
       if(this.props.user.topics[i].name===this.props.topics[0].name){
+        console.log("found one!")
         this.setState({topic1Val:this.props.user.topics[i].side})
       }else if(this.props.user.topics[i].name===this.props.topics[1].name){
+        console.log("found one!")
         this.setState({topic2Val:this.props.user.topics[i].side})
     }else if(this.props.user.topics[i].name===this.props.topics[2].name){
+      console.log("found one!")
       this.setState({topic3Val:this.props.user.topics[i].side})
       }
     }
