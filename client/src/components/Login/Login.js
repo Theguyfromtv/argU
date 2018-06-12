@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import './Login.css'
 
 //import API from "../../utils/API"
- class Login extends Component {
+ const Login=()=> {
      
-  render() {
+
     return (
       <div>
         <a  href="/auth/facebook " className="btn btn-lg btn-block btn-primary facebook">Login with Facebook</a>
@@ -12,7 +12,7 @@ import './Login.css'
       </div>
     )
   }
-}
+
 
 
 

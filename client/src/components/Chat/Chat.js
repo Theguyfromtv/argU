@@ -2,7 +2,7 @@ import React from 'react'
 import './Chat.css'
 import Message from '../Message/Message'
 
-const Chat=()=> {
+const Chat=(props)=> {
 
 
     return (
