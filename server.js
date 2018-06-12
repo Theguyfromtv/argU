@@ -64,7 +64,7 @@ io.on('connection', (socket) => {
     console.log("socket id is:"+ socket.id);
     socket.on('message', (message)=>{
       io.sockets.emit('message', message)
-      console.log(message)
+      //console.log(message)
     })
 });
 

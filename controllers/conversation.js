@@ -7,7 +7,6 @@ const chatController={}
 
 
 chatController.getMessages= (req,res)=>{
-  console.log(req.params.id)
   Chat.find({participant1id:req.params.id}).exec((err,chats)=>{
     if (err) throw err
     Chat.find({participant2id:req.params.id}).exec((err,moreChats)=>{
