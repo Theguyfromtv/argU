@@ -20,16 +20,12 @@ class Arguments extends Component {
     let userId=userArr[1]
     let userFinalId=userId.split('&')
     userId=userFinalId[0]
-    console.log(userId)
     API.getUser(userId).then((res)=>{
-        console.log(res.data)
         this.setState({user:res.data},()=>{
-            console.log(this.state.user)
         })
         API.getChats(userId).then(res=>{
             this.setState({chats:res.data.chats})
-            console.log(res)
-            console.log(this.state.chats)
+
         })
 
     })
