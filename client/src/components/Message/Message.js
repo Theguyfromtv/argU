@@ -3,7 +3,7 @@ import "./Message.css"
 
  const Message=(props)=> {
     return (
-      <div className="row message">
+      <div className="message">
           {props.message.sender===props.user._id?
           <div>
             <p>{props.message.side?"Pro":"Con"}</p>
