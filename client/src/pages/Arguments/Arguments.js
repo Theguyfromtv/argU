@@ -73,7 +73,7 @@ class Arguments extends Component {
     this.setState({isHidden: !this.state.isHidden})
   
   }
-  componentDidMount(){
+  componentWillMount(){
     this.loadUser()
     this.loadCurrentChat()
     
