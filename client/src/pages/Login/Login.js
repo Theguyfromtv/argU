@@ -10,8 +10,6 @@ const LoginPage=() => {
       <div className="container">
         <div className="row section">
             <Logo/>
-            </div>
-            <div className="row section">
             <div className="card login">
               <div className="card-body">
                 <div className="text-center">
