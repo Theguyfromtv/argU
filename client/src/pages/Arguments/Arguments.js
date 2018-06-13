@@ -89,7 +89,7 @@ class Arguments extends Component {
         this.socket.emit('message',newMessage)
         this.setState({newMessage:""})
         var element = document.getElementById("chat");
-        element.scrollTop = element.scrollHeight;
+        element.scrollTop = element.scrollHeight+1000;
     
   }
 
