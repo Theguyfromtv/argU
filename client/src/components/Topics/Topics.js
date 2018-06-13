@@ -141,7 +141,7 @@ import 'react-slidedown/lib/slidedown.css'
           <div className="col-4">
           <label htmlFor={this.props.topics[3].name}>
           <Switch
-            onChange={this.handleChange3}
+            onChange={this.handleChange4}
             checked={this.state.topic4Val}
             offColor="#eb3c24"
             onColor="#3385f7"
@@ -160,7 +160,7 @@ import 'react-slidedown/lib/slidedown.css'
         <div className="col-4">
         <label htmlFor={this.props.topics[4].name}>
         <Switch
-          onChange={this.handleChange3}
+          onChange={this.handleChange5}
           checked={this.state.topic5Val}
           offColor="#eb3c24"
           onColor="#3385f7"
