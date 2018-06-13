@@ -135,7 +135,7 @@ class Arguments extends Component {
     return (
       <div className="container-fluid">
            <MediaQuery query="(min-width: 769px)">
-           <div className="row">
+           <div className="row no-gutters">
                 <ArgumentList
                 chats={this.state.chats}
                 user={this.state.user}
