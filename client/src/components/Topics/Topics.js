@@ -74,7 +74,7 @@ import "./Topics.css"
   
  render(){
   return (
-    <SlideDown>
+    <SlideDown className="container-fluid">
     <div className="card topics">
       <div className="card-body">
       <div className="row">
