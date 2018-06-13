@@ -68,13 +68,17 @@ textarea{
 }
 
 .bottom1{
-    padding-left: 0
+    padding: 0
 }
 
 .bottom2{
-    padding-right: 0
+    padding: 0
 }
 
 .submit:active{
     background-color: #eb3c24;
+}
+
+.col-sm-8{
+    padding: 0;
 }
