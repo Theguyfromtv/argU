@@ -1908,6 +1908,10 @@ react-alert-template-basic@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-alert-template-basic/-/react-alert-template-basic-1.0.0.tgz#89bcf35095faf5ebdd25e1e7c300e6b4234b5ba1"
 
+react-alert@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-alert/-/react-alert-4.0.4.tgz#ccd7201e16cd800305625e888ae345c181071ab5"
+
 react-responsive@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-4.1.0.tgz#01d129a35729c8f0373e79871cc8d5ecf6e22765"
