@@ -7,7 +7,7 @@ import './Login.css'
 const LoginPage=() => {
   return (
     <div>
-      <div className="container section">
+      <div className="container">
         <div className="row section">
             <Logo/>
             </div>
