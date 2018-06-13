@@ -28,7 +28,6 @@ const Chat=(props)=> (
             <div className="row input">
               <div className="col-9">
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Example textarea</label>
                     <textarea  value={props.newMessage} placeholder="What's your argument?" class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={props.onChange}></textarea>
                 </div>
               </div>
