@@ -1,5 +1,4 @@
 import React from 'react'
-import "./Argument.css"
 
 export default (props) => {
   return (
