@@ -39,9 +39,6 @@
         min-height: 70vh
 
     }
-    .submit{
-        width: 100%;
-    }
 }
 
 .input{
@@ -67,7 +64,7 @@ textarea{
 .submit{
     border-radius: 0px;
     height: 100%;
-    width:60%
+    width:100%
 }
 
 .bottom1{
