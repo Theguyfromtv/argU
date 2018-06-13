@@ -82,14 +82,16 @@ class Arguments extends Component {
     this.setState({newMessage: event.target.value});
   }
   sendMessage=(cid,message,uid,side)=>{
-    API.sendMessage(cid,message,uid,side).then((res)=>{
-    })
-      let newMessage={chatId:cid, message:message,sender:uid,side:side}
-      this.socket.emit('message',newMessage)
-      this.setState({newMessage:""})
-      var element = document.getElementById("chat");
-      element.scrollTop = element.scrollHeight;
-      }
+    if(!message===""){
+      API.sendMessage(cid,message,uid,side).then((res)=>{
+      })
+        let newMessage={chatId:cid, message:message,sender:uid,side:side}
+        this.socket.emit('message',newMessage)
+        this.setState({newMessage:""})
+        var element = document.getElementById("chat");
+        element.scrollTop = element.scrollHeight;
+    }
+  }
 
   toggleHidden(){
     this.setState({isHidden: !this.state.isHidden})
