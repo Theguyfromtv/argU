@@ -19,6 +19,7 @@ p{
 
 .messageText{
     color: black;
+    
 }
 
 .pro:after {
@@ -28,7 +29,10 @@ p{
   }
 
 .card-body{
-    display: flex
+    display: flex;
+    font-size: 14px;
+    line-height: 1.2em;
+    word-wrap:break-word;
 }
 
 .con:after {
