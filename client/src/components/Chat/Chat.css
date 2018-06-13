@@ -42,7 +42,8 @@
 }
 
 .input{
-    max-height: 15vh
+    max-height: 15vh;
+    padding-right: 10px;
 }
 
 .chat-bar{
