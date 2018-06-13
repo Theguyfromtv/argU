@@ -13,7 +13,7 @@ const Chat=(props)=> (
               </div>
             </div>
           </div>
-            <div className="row chat" id="chat">
+            <div className="row chat no-gutters" id="chat">
                 <div className="col-12">
                 {props.messages.map(message=>(
               <Message 
