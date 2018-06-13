@@ -38,10 +38,13 @@ class ArgumentList extends Component {
          id={chat._id}
          participant1id={chat.participant1id}
          participant1name={chat.participant1name}
+         participant1read={chat.participant1read}
+         participant2read={chat.participant2read}
          participant2id={chat.participant2id}
          participant2name={chat.participant2name}
          user={this.props.user}
          topic={chat.topic}
+         markRead={this.props.markRead}
          />
          ): <h4>You have no arguments yet, tell us your opinions and find some!</h4>}
  

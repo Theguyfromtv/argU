@@ -27,6 +27,18 @@ const API= {
         topic: topic,
         side:side
       })
+    },
+    read1:(cid,read)=>{
+      return axios.post('chats/read1',{
+        id:cid,
+        read:read
+      })
+    },
+    read2:(cid,read)=>{
+      return axios.post('chats/read2',{
+        id:cid,
+        read:read
+      })
     }
   };
 

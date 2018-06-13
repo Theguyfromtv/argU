@@ -41,7 +41,6 @@ class Arguments extends Component {
                     this.setState({currentChat:findChat})
                     console.log(this.state.currentChat)
                     this.setState({messages:findChat.messages})
-                    console.log(this.state.messages)
                     if(this.state.currentChat.participant1id===this.state.user._id){
                     this.setState({side:true})
                     this.setState({className:"pro"})
@@ -63,26 +62,30 @@ class Arguments extends Component {
 
     })
     }
+
+  markRead(uid, p1id, p2id, cid, read){
+    if(p1id===uid){
+      API.read1(cid, read).then(res=>{
+        this.setState({currentChat:res.data})
+      })
+    }else if(p2id===uid){
+      API.read2(cid, read).then(res=>{
+        this.setState({currentChat:res.data})
+      })
+  }
+  }
     
   handleChange=(event)=>{
     this.setState({newMessage: event.target.value});
   }
   sendMessage=(cid,message,uid,side)=>{
     API.sendMessage(cid,message,uid,side).then((res)=>{
-      console.log(res)
+      this.markRead(this.state.user._id,this.state.currentChat.participant1id, this.state.currentChat.participant2id, this.state.currentChat._id, false)
     })
       let newMessage={chatId:cid, message:message,sender:uid,side:side}
       this.socket.emit('message',newMessage)
       this.setState({newMessage:""})
       }
-
-
-   
-  
-  
-
-
-
 
   toggleHidden(){
     this.setState({isHidden: !this.state.isHidden})
@@ -90,6 +93,8 @@ class Arguments extends Component {
   }
   componentDidMount(){
     this.loadUser()
+    this.markRead = this.markRead.bind(this)
+
     
     this.socket = io("https://argu-chat.herokuapp.com/")
 
@@ -117,7 +122,7 @@ class Arguments extends Component {
                 chats={this.state.chats}
                 user={this.state.user}
                 unread={this.state.unread}
-                />
+                markRead={this.markRead}/>
                 
 
                     <Chat
@@ -138,7 +143,7 @@ class Arguments extends Component {
                 {!this.state.isHidden && <ArgumentList 
                 chats={this.state.chats}
                 user={this.state.user}
-                />}
+                markRead={this.markRead}/>}
                 {this.state.isHidden && <Chat
                 chats={this.state.chats}
                 currentChat={this.state.currentChat}

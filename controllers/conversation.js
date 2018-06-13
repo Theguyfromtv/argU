@@ -18,12 +18,28 @@ chatController.getMessages= (req,res)=>{
 
 chatController.sendMessage=(req,res)=>{
   let message = {sender:req.body.sender,message:req.body.message,side:req.body.side, chatId:req.body.id}
-  Chat.findOneAndUpdate({_id:req.body.id},{$push:{messages:message}}).exec((err,chat)=>{
+  Chat.findOneAndUpdate({_id:req.body.id},{$push:{messages:message}},(err,chat)=>{
     if (err) throw err
     console.log("message sent")
   })
 }
 
+
+chatController.read1=(req,res)=>{
+  Chat.findOneAndUpdate({_id:req.body.id}, {participant2read:req.body.read},(err,chat)=>{
+    if (err) throw err
+    res.json({chat})
+  }
+  )
+}
+
+chatController.read2=(req,res)=>{
+  Chat.findOneAndUpdate({_id:req.body.id}, {participant1read:req.body.read},(err,chat)=>{
+    if (err) throw err
+    res.json({chat})
+  }
+  )
+}
 
 
 module.exports = chatController; 
