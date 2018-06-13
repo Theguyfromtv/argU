@@ -26,12 +26,12 @@ const Chat=(props)=> (
                 </div>
             </div>
             <div className="row input">
-              <div className="col-9">
+              <div className="col-10 bottom2">
                 <div class="form-group">
                     <textarea  value={props.newMessage} placeholder="What's your argument?" class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={props.onChange}></textarea>
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-2 bottom1">
                 <button  type="submit" className={"submit btn btn-primary "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
               </div>
             </div>
