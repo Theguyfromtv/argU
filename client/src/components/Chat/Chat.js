@@ -5,7 +5,7 @@ import Message from '../Message/Message'
 const Chat=(props)=> (
 
 
-    <div className="col-8">
+    <div className="col-8 col-sm-12">
           <div className="row chat-bar no-gutters">
             <div className={"col-12"}>
             <div className=" text-center">
