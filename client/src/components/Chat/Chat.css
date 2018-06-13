@@ -51,7 +51,9 @@
 }
 
 textarea{
-    resize: none
+    resize: none;
+    height: 100%;
+
 }
 
 .submit{
