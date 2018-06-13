@@ -56,6 +56,10 @@ textarea{
 
 }
 
+.form-control{
+    height: 100%;
+}
+
 .submit{
     border-radius: 0px;
     height: 100%;
