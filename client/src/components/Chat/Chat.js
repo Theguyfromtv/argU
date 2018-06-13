@@ -8,8 +8,8 @@ const Chat=(props)=> (
     <div className="col-sm-8">
           <div className="row">
             <div className="col-12">
-            <div className="chat-bar">
-                <p className="navbar-brand">Argument about:{props.currentChat.topic}</p>
+            <div className="chat-bar text-center">
+                <p>Argument about:{props.currentChat.topic}</p>
               </div>
             </div>
           </div>

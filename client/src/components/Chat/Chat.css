@@ -39,3 +39,7 @@
 .input{
     max-height: 15vh
 }
+
+.chatBar{
+    max-height: 5vh
+}
