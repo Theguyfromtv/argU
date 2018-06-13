@@ -42,6 +42,6 @@
 
 .chat-bar{
     max-height: 5vh;
-    border-bottom: 5px;
+    border-bottom: 20px;
     border-color: black
 }
