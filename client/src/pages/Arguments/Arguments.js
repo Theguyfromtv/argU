@@ -80,7 +80,6 @@ class Arguments extends Component {
   }
   sendMessage=(cid,message,uid,side)=>{
     API.sendMessage(cid,message,uid,side).then((res)=>{
-      this.markRead(this.state.user._id,this.state.currentChat.participant1id, this.state.currentChat.participant2id, this.state.currentChat._id, false)
     })
       let newMessage={chatId:cid, message:message,sender:uid,side:side}
       this.socket.emit('message',newMessage)
@@ -122,7 +121,8 @@ class Arguments extends Component {
                 chats={this.state.chats}
                 user={this.state.user}
                 unread={this.state.unread}
-                markRead={this.markRead}/>
+                markRead={this.markRead}
+                side={this.state.side}/>
                 
 
                     <Chat
@@ -139,11 +139,12 @@ class Arguments extends Component {
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
            
-            <button className="btn btn-lg btn-link btn-sidebar sidebar" onClick={this.toggleHidden.bind(this)}><i class="fas fa-bars"></i></button>
+            <button className="btn btn-lg btn-link btn-sidebar sidebar" onClick={this.toggleHidden.bind(this)}><i className="fas fa-bars"></i></button>
                 {!this.state.isHidden && <ArgumentList 
                 chats={this.state.chats}
                 user={this.state.user}
-                markRead={this.markRead}/>}
+                markRead={this.markRead}
+                side={this.state.side}/>}
                 {this.state.isHidden && <Chat
                 chats={this.state.chats}
                 currentChat={this.state.currentChat}
