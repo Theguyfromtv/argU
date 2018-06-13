@@ -25,7 +25,8 @@
     background-color: #eb3c24;
 }
 
-.input{
-    position: fixed;
-    bottom: 0;
+.chat{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
