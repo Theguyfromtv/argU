@@ -100,8 +100,13 @@ class Arguments extends Component {
   componentDidMount(){
     this.loadUser()
     this.markRead = this.markRead.bind(this)
-    var element = document.getElementById("chat");
+    setTimeout(function(){ 
+      var element = document.getElementById("chat");
       element.scrollTop = element.scrollHeight;
+     }, 1000);
+
+    var element = document.getElementById("chat");
+    element.scrollTop = element.scrollHeight;
 
     
     this.socket = io("https://argu-chat.herokuapp.com/")
