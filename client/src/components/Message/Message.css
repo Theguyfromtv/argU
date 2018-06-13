@@ -11,3 +11,8 @@
 p{
     margin-bottom: 5px;
 }
+
+.name{
+    color: gray;
+    font-size: 6px
+}
