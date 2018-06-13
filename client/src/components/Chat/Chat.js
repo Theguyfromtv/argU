@@ -7,7 +7,7 @@ const Chat=(props)=> (
 
     <div className="col-sm-8">
           <div className="row">
-            <div className="col-12 chat-bar">
+            <div className={"col-12 chat-bar "+props.side?"pro":"false"}>
             <div className=" text-center">
                 <p>Argument about:{props.currentChat.topic}</p>
               </div>
