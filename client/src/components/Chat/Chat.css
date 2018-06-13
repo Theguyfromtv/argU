@@ -24,3 +24,8 @@
 .con:active{
     background-color: #eb3c24;
 }
+
+.input{
+    position: fixed;
+    bottom: 0;
+}

@@ -25,17 +25,19 @@ const Chat=(props)=> (
                 ))}
                 </div>
             </div>
-            <div className="row">
-            <div className="col-12">
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea  value={props.newMessage} placeholder="What's your argument?" class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={props.onChange}></textarea>
-            </div>
-            <button  type="submit" className={"submit btn btn-link "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
-
-            </div>
+            <div className="row input">
+              <div className="col-9">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea  value={props.newMessage} placeholder="What's your argument?" class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={props.onChange}></textarea>
+                </div>
+              </div>
+              <div className="col-3">
+                <button  type="submit" className={"submit btn btn-primary "+props.className} onClick={()=>{props.onClick(props.currentChat._id,props.newMessage,props.user._id,props.side)}} ><i className="zmdi zmdi-mail-send"></i></button>  
+              </div>
             </div>
       </div>
+    
 
 )
 
