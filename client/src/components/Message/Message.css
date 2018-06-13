@@ -40,9 +40,3 @@ p{
     clear: both;
 }
 
-@media only screen and (max-width: 768px) {
-    .message {
-        max-width: 70%;
-
-    }
-}
