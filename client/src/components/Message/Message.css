@@ -27,11 +27,7 @@ p{
     clear: both;
   }
 
-.pro{
-    display: flex
-}
-
-.con{
+.card-body{
     display: flex
 }
 
