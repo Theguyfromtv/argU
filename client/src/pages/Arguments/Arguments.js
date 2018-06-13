@@ -16,6 +16,7 @@ class Arguments extends Component {
         messages:[],
         side:false,
         className:"",
+        counterClassName:"",
         newMessage:""
         
     }
@@ -44,9 +45,11 @@ class Arguments extends Component {
                     if(this.state.currentChat.participant1id===this.state.user._id){
                     this.setState({side:true})
                     this.setState({className:"pro"})
+                    this.setState({counterClassName:"con"})
                     }else if(this.state.currentChat.participant2id===this.state.user._id){
                     this.setState({side:false})
                     this.setState({className:"con"})
+                    this.setState({counterClassName:"pro"})
                     }else{
                     return "pick an argument to see messages"
                   }
@@ -154,7 +157,8 @@ class Arguments extends Component {
                 messages={this.state.messages}
                 onChange={this.handleChange}
                 onClick={this.sendMessage}
-                newMessage={this.state.newMessage}/>}
+                newMessage={this.state.newMessage}
+                counterClassName={this.state.counterClassName}/>}
 
                 
             </MediaQuery>

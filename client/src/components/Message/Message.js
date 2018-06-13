@@ -11,7 +11,7 @@ import "./Message.css"
             <div className="col-lg-4 col-sm-10">
               <div>
               <p>{props.message.side?"Pro":"Con"}</p>
-              <div className={"card "+props.message.side?"pro":"con"} >
+              <div className="card" className={props.className} >
                 <div className="card-body">
                   <p>{props.message.message}</p>
                 </div>
@@ -23,7 +23,7 @@ import "./Message.css"
           <div className="row">
             <div className="col-lg-4 col-sm-10">
             <p>{props.message.side?"Pro":"Con"}</p>
-            <div className={"card "+props.message.side?"pro":"con"} >
+            <div className="card" className={props.counterClassName} >
               <div className="card-body">
                 <p>{props.message.message}</p>
               </div>

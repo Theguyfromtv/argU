@@ -20,7 +20,8 @@ const Chat=(props)=> (
                 message={message}
                 side={props.side}
                 className={props.className}
-                user={props.user}/>
+                user={props.user}
+                counterClassName={props.counterClassName}/>
                 ))}
                 </div>
             </div>
