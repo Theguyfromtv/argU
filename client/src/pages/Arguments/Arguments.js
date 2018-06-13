@@ -88,8 +88,9 @@ class Arguments extends Component {
         let newMessage={chatId:cid, message:message,sender:uid,side:side}
         this.socket.emit('message',newMessage)
         this.setState({newMessage:""})
-        var element = document.getElementById("chat");
-        element.scrollTop = element.scrollHeight+1000;
+        const element = document.getElementById("chat");
+        const scrolldiv = element.scrollHeight+1000
+        element.scrollTop = scrolldiv;
     
   }
 
