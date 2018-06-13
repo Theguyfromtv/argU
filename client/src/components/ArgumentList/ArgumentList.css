@@ -2,7 +2,12 @@
     overflow-y: scroll;
 }
 
-.topBar{
+.top-bar{
     border-bottom: 5px;
+    border-color: black
+}
+
+.sidebar{
+    border-right: 5px;
     border-color: black
 }
