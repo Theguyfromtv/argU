@@ -5,7 +5,7 @@ import "./Message.css"
     return (
       <div className="message">
           {props.message.sender==props.user._id?
-          <div className="row">
+          <div className="row no-gutters">
             <div className="col-lg-8 col-sm-6">
             </div>
             <div className="col-lg-4 col-sm-6">
@@ -20,7 +20,7 @@ import "./Message.css"
             </div>
           </div>
           :
-          <div className="row">
+          <div className="row no-gutters">
             <div className="col-lg-4 col-sm-6">
             <p className="name">{props.message.side?"Pro":"Con"}</p>
             <div className={props.message.side?"pro":"con"}>
