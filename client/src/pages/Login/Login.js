@@ -10,7 +10,7 @@ const LoginPage=() => {
       <div className="container">
         <div className="row section">
           <div className="row">
-          <Logo className="middle"/>
+          <Logo/>
           </div>
           <div className="row">
           <div className="card login middle">
