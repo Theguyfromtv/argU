@@ -8,8 +8,9 @@ const LoginPage=() => {
   return (
     <div>
       <div className="container section">
-        <div className="row ">
+        <div className="row section">
             <Logo/>
+
             <div className="card">
               <div className="card-body">
                 <div className="text-center">
@@ -22,7 +23,6 @@ const LoginPage=() => {
           </div>
         </div>
       </div>
-
   )
 }
 
