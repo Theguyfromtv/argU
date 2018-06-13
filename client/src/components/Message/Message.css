@@ -32,7 +32,6 @@ p{
     display: flex;
     font-size: 14px;
     line-height: 1.2em;
-    word-wrap:break-word;
 }
 
 .con:after {
