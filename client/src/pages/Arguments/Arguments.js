@@ -87,6 +87,8 @@ class Arguments extends Component {
       let newMessage={chatId:cid, message:message,sender:uid,side:side}
       this.socket.emit('message',newMessage)
       this.setState({newMessage:""})
+      var element = document.getElementById("chat");
+      element.scrollTop = element.scrollHeight;
       }
 
   toggleHidden(){
@@ -96,6 +98,8 @@ class Arguments extends Component {
   componentDidMount(){
     this.loadUser()
     this.markRead = this.markRead.bind(this)
+    var element = document.getElementById("chat");
+      element.scrollTop = element.scrollHeight;
 
     
     this.socket = io("https://argu-chat.herokuapp.com/")
