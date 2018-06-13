@@ -41,5 +41,7 @@
 }
 
 .chatBar{
-    max-height: 5vh
+    max-height: 5vh;
+    border-bottom: 5px;
+    border-color: black
 }
