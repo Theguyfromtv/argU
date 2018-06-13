@@ -4,6 +4,7 @@ import API from '../../utils/API'
 import {SlideDown} from 'react-slidedown'
 import { withAlert } from "react-alert";
 import 'react-slidedown/lib/slidedown.css'
+import "./Topics.css"
 
 
 
@@ -27,6 +28,12 @@ import 'react-slidedown/lib/slidedown.css'
   }
   handleChange3=()=>{
     this.setState({ topic3Val:!this.state.topic3Val })
+  }
+  handleChange4=()=>{
+    this.setState({ topic3Val:!this.state.topic4Val })
+  }
+  handleChange5=()=>{
+    this.setState({ topic3Val:!this.state.topic5Val })
   }
   sendChange=(topic,side,id)=>{
     API.updateTopics(topic,side,id).then(res=>{
@@ -79,7 +86,7 @@ import 'react-slidedown/lib/slidedown.css'
     
       <div className="row">
         <div className="col-4">
-          <span>{this.props.topics[0].name}</span>
+          <span className="opinionText">{this.props.topics[0].name}</span>
         </div>
         <div className="col-4">
           <label htmlFor={this.props.topics[0].name}>
