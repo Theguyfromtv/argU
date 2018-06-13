@@ -49,3 +49,12 @@
     border-bottom: 20px;
     border-color: black
 }
+
+textarea{
+    resize: none
+}
+
+.submit{
+    border-radius: 0px;
+    height: 100%;
+}
