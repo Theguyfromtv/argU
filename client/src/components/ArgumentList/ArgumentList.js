@@ -29,7 +29,7 @@ class ArgumentList extends Component {
        <div className="top-bar">
          <h6>{this.props.user.name}'s Arguments</h6>
          <button className="btn btn-lg btn-link btn-sidebar topicsButton" onClick={this.toggleTopics.bind(this)}><i className="fas fa-gavel"></i></button>
-         {this.state.isHidden && <Topics user={this.props.user} topics={[{name:"Trump",id:"1"}, {name:"Abortion",id:"2"},{name:"Star Wars: The Last Jedi", id:"3"}]}/>}
+         {this.state.isHidden && <Topics user={this.props.user} topics={[{name:"Trump",id:"1"}, {name:"Abortion",id:"2"},{name:"Star Wars: The Last Jedi", id:"3"},{name:"North Korea Agreement", id:"4"}, {name:"Kanye West", id:"5"}]}/>}
        </div>
        <div className="sidebar">
          {this.props.chats? this.props.chats.map(chat=>

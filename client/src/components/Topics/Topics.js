@@ -11,6 +11,8 @@ import 'react-slidedown/lib/slidedown.css'
     topic1Val:true,
     topic2Val:true,
     topic3Val:true,
+    topic4Val:true,
+    topic5Val:true,
     user:{}
 
   }
@@ -131,6 +133,43 @@ import 'react-slidedown/lib/slidedown.css'
         </div>
       </div>
       <hr/>
+        <div className="row">
+          <div className="col-4">
+            <span>{this.props.topics[3].name}</span>
+          </div>
+          <div className="col-4">
+          <label htmlFor={this.props.topics[3].name}>
+          <Switch
+            onChange={this.handleChange3}
+            checked={this.state.topic4Val}
+            offColor="#eb3c24"
+            onColor="#3385f7"
+          />
+            </label>
+          </div>
+          <div className="col-4">
+          <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[3].name, this.state.topic4Val,this.state.user._id)}}>argu!</button>
+          </div>
+      </div>
+      <hr/>
+      <div className="row">
+        <div className="col-4">
+          <span>{this.props.topics[4].name}</span>
+        </div>
+        <div className="col-4">
+        <label htmlFor={this.props.topics[4].name}>
+        <Switch
+          onChange={this.handleChange3}
+          checked={this.state.topic5Val}
+          offColor="#eb3c24"
+          onColor="#3385f7"
+        />
+          </label>
+        </div>
+        <div className="col-4">
+        <button className="btn btn-lg btn-primary btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[4].name, this.state.topic5Val,this.state.user._id)}}>argu!</button>
+        </div>
+      </div>
     </div>
   </div>
   </SlideDown>
