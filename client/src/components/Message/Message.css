@@ -39,3 +39,10 @@ p{
     display: table;
     clear: both;
 }
+
+@media only screen and (max-width: 768px) {
+    .chat {
+        max-width: 70%;
+
+    }
+}
