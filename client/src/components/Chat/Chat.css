@@ -63,13 +63,13 @@ textarea{
 .submit{
     border-radius: 0px;
     height: 100%;
-    width:50%
+    width:60%
 }
 
 .bottom1{
-    margin-left: 0
+    padding-left: 0
 }
 
 .bottom2{
-    margin-right: 0
+    padding-right: 0
 }
