@@ -82,7 +82,7 @@ class Arguments extends Component {
     this.setState({newMessage: event.target.value});
   }
   sendMessage=(cid,message,uid,side)=>{
-    if(!message===""){
+    if(message){
       API.sendMessage(cid,message,uid,side).then((res)=>{
       })
         let newMessage={chatId:cid, message:message,sender:uid,side:side}
