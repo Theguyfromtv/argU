@@ -27,6 +27,14 @@ p{
     clear: both;
   }
 
+.pro{
+    display: flex
+}
+
+.con{
+    display: flex
+}
+
 .con:after {
     content: "";
     display: table;
