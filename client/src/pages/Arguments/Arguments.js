@@ -134,7 +134,7 @@ class Arguments extends Component {
             </MediaQuery>
             <MediaQuery query="(max-width: 768px)">
            
-            <button className="btn btn-lg btn-primary btn-sidebar sidebar" onClick={this.toggleHidden.bind(this)}>Sidebar</button>
+            <button className="btn btn-lg btn-link btn-sidebar sidebar" onClick={this.toggleHidden.bind(this)}><i class="fas fa-bars"></i></button>
                 {!this.state.isHidden && <ArgumentList 
                 chats={this.state.chats}
                 user={this.state.user}
