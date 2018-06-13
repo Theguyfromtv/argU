@@ -27,7 +27,7 @@ class ArgumentList extends Component {
       <SlideDown className="col-sm-4 sidebar">
       <div >
        <div className="top-bar">
-         <h6>Your Arguments            <button className="btn btn-lg btn-link btn-sidebar topicsButton float-right" onClick={this.toggleTopics.bind(this)}><i className="fas fa-gavel"></i></button></h6>
+         <h6>Your Arguments            <button className="btn btn-lg btn-link btn-sidebar topicsButton" onClick={this.toggleTopics.bind(this)}><i className="fas fa-gavel"></i></button></h6>
          {this.state.isHidden && <Topics user={this.props.user} topics={[{name:"Trump",id:"1"}, {name:"Abortion",id:"2"},{name:"Star Wars: The Last Jedi", id:"3"},{name:"North Korea Agreement", id:"4"}, {name:"Kanye West", id:"5"}]}/>}
        </div>
        <div className="sidebar">

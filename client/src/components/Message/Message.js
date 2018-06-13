@@ -13,7 +13,7 @@ import "./Message.css"
               <p className="name">{props.message.side?"Pro":"Con"}</p>
               <div className={props.message.side?"pro":"con"}>
                 <div className="card-body">
-                  <p>{props.message.message}</p>
+                  <p className="messageText">{props.message.message}</p>
                 </div>
               </div>
           </div>
