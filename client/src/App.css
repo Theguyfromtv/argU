@@ -36,7 +36,13 @@
 }
 
 .card{
+  border-radius: 0px;
+}
+
+.login{
   border-radius:25px;
 }
+
+
 
 
