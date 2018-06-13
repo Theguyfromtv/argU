@@ -30,10 +30,10 @@ import "./Topics.css"
     this.setState({ topic3Val:!this.state.topic3Val })
   }
   handleChange4=()=>{
-    this.setState({ topic3Val:!this.state.topic4Val })
+    this.setState({ topic4Val:!this.state.topic4Val })
   }
   handleChange5=()=>{
-    this.setState({ topic3Val:!this.state.topic5Val })
+    this.setState({ topic5Val:!this.state.topic5Val })
   }
   sendChange=(topic,side,id)=>{
     API.updateTopics(topic,side,id).then(res=>{
