@@ -9,7 +9,7 @@ const LoginPage=() => {
     <div>
       <div className="container">
         <div className="row section">
-          <div className="row">
+          <div className="row section">
           <Logo/>
           </div>
           <div className="row">
