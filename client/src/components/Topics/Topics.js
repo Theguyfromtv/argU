@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Switch from "react-switch";
 import API from '../../utils/API'
 import {SlideDown} from 'react-slidedown'
+import { withAlert } from "react-alert";
 import 'react-slidedown/lib/slidedown.css'
 
 
@@ -33,7 +34,7 @@ import 'react-slidedown/lib/slidedown.css'
         window.location.replace("/user/arguments?uid="+this.state.user._id+"&cid="+res.data._id)
       }
       else{
-
+        this.props.alert.error("No matches yet, but we're working on it!")
       }
     })
 
