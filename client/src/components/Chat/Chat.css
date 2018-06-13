@@ -47,8 +47,8 @@
 
 .chat-bar{
     max-height: 5vh;
-    border-bottom: 20px;
-    border-color: black
+    border: 5px;
+    border-color: black;
 }
 
 textarea{
