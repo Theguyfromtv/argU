@@ -41,7 +41,7 @@ import "./Topics.css"
         window.location.replace("/user/arguments?uid="+this.state.user._id+"&cid="+res.data._id)
       }
       else{
-        this.props.alert.error("No matches yet, but we're working on it!")
+        alert("No matches yet, but we're working on it!")
       }
     })
 
