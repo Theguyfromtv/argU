@@ -118,7 +118,7 @@ import "./Topics.css"
           </label>
         </div>
         <div className="col-4">
-          <button className="btn btn-lg btn-link btn-topics" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val,this.state.user._id)}}>argu!</button>
+          <button className="btn btn-lg btn-link btn-topics" onClick={()=>{this.sendChange(this.props.topics[1].name, this.state.topic2Val, this.props.user._id)}}>argu!</button>
         </div>
       </div>
       <hr/>
@@ -137,7 +137,7 @@ import "./Topics.css"
           </label>
         </div>
         <div className="col-4">
-        <button className="btn btn-lg btn-link btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.state.user._id)}}>argu!</button>
+        <button className="btn btn-lg btn-link btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[2].name, this.state.topic3Val,this.props.user._id)}}>argu!</button>
         </div>
       </div>
       <hr/>
@@ -156,7 +156,7 @@ import "./Topics.css"
             </label>
           </div>
           <div className="col-4">
-          <button className="btn btn-lg btn-link btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[3].name, this.state.topic4Val,this.state.user._id)}}>argu!</button>
+          <button className="btn btn-lg btn-link btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[3].name, this.state.topic4Val,this.props.user._id)}}>argu!</button>
           </div>
       </div>
       <hr/>
@@ -175,7 +175,7 @@ import "./Topics.css"
           </label>
         </div>
         <div className="col-4">
-        <button className="btn btn-lg btn-link btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[4].name, this.state.topic5Val,this.state.user._id)}}>argu!</button>
+        <button className="btn btn-lg btn-link btn-sidebar"onClick={()=>{this.sendChange(this.props.topics[4].name, this.state.topic5Val,this.props.user._id)}}>argu!</button>
         </div>
       </div>
     </div>
