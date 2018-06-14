@@ -3,8 +3,9 @@
 }
 
 .top-bar{
-    border-bottom: 5px;
-    border-color: black
+    border-width: 10px;
+    border-color: black;
+    padding: 10px;
 }
 
 .sidebar{
