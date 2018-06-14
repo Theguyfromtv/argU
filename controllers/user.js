@@ -85,12 +85,14 @@ userController.updateTopics=(req,res)=>{
      }
  
     })
-      }
+      
       
 
 
 
-})}
+}
+})
+}
 
 userController.getTopics=(req,res)=>{
   User.findOne({_id:req.params.id}, function(err,user){
