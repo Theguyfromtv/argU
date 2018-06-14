@@ -40,7 +40,7 @@ import "./Topics.css"
       if(res.data._id){
         window.location.replace("/user/arguments?uid="+this.state.user._id+"&cid="+res.data._id)
       }
-      else{
+      else if(!res.data._id){
         alert("No matches yet, but we're working on it!")
       }
     })
