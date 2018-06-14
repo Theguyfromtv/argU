@@ -99,7 +99,7 @@ import "./Topics.css"
           </label>
         </div>
         <div className="col-4">
-          <button className="btn btn-lg btn-link btn-topics"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.state.user._id)}}>argu!</button>
+          <button className="btn btn-lg btn-link btn-topics"onClick={()=>{this.sendChange(this.props.topics[0].name, this.state.topic1Val,this.props.user._id)}}>argu!</button>
         </div>
       </div>
       <hr/>
