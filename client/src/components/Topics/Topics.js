@@ -38,7 +38,7 @@ import "./Topics.css"
   sendChange=(topic,side,id)=>{
     API.updateTopics(topic,side,id).then(res=>{
       if(res.data._id){
-        window.location.replace("/user/arguments?uid="+this.state.user._id+"&cid="+res.data._id)
+        window.location.replace("/user/arguments?uid="+this.props.user._id+"&cid="+res.data._id)
       }
       else if(!res.data._id){
         alert("No matches yet, but we're working on it!")
